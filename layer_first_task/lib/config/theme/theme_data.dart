@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:olgoo_mobile/config/theme/color_pallet.dart';
-import 'package:olgoo_mobile/config/theme/text_styles.dart';
+import 'package:layer_first_task/config/theme/color_pallet.dart';
+import 'package:layer_first_task/config/theme/text_styles.dart';
+
 
 ThemeData lightThemeData = ThemeData(
     fontFamily: 'dana',
