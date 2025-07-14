@@ -58,7 +58,11 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
              TextFieldWidget(),
              Spacer(),
-             LoginButton(),//primery bottun بزارمش تو پوشه core
+             LoginButton( onTap: () {    
+                   print("Login button tapped!");
+                    },
+                   text: StringConsts.loginButton, 
+                    ),
              20.0.verticalSpace,
              RichTextWidget(),           
              30.0.verticalSpace,

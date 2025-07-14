@@ -2,16 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:layer_first_task/config/asset/strings.dart';
 
 class LoginButton extends StatelessWidget {
+   final VoidCallback onTap; // تابعی که هنگام کلیک اجرا می‌شود
+  final String text; // متن دکمه
+
   const LoginButton({
-    super.key,
-  });
+    Key? key,
+    required this.onTap,
+    required this.text,
+  }) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-     onTap: () {
-       
-     },
+     onTap: onTap,
      borderRadius: BorderRadius.circular(12),
      
      child: Container(
@@ -30,15 +34,17 @@ class LoginButton extends StatelessWidget {
        
                 ),
     alignment: Alignment.center,
-    child: Text(
-                StringConsts.loginButton,
-    style: TextStyle(
-     fontFamily: 'dana',
-     fontSize: 12.0,
-     fontWeight: FontWeight.bold,
-      color: Theme.of(context).colorScheme.onPrimary,
-      ),
-                ),
+    child: Center(
+      child: Text(
+        text,
+       style: TextStyle(
+       fontFamily: 'dana',
+       fontSize: 12.0,
+       fontWeight: FontWeight.bold,
+        color: Theme.of(context).colorScheme.onPrimary,
+        ),
+                  ),
+    ),
      ),
      
     );
