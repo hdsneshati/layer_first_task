@@ -21,12 +21,13 @@ class _LoginScreenState extends State<LoginScreen> {
       body:Center(
         child: Column(
           children: [
+            100.0.verticalSpace,
             SvgPicture.asset(
               SvgPath.logo,
               width: 100,
               height: 100,
             ),   
-            117.0.verticalSpace,        
+            17.0.verticalSpace,        
             Text(StringConsts.loginHeader
             ,style: TextStyle(
               fontFamily: 'dana',
