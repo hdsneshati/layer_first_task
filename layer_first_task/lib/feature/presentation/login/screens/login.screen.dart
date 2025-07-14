@@ -58,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
              TextFieldWidget(),
              Spacer(),
-             LoginButton( onTap: () {    
+             PrimaryButton( onTap: () {    
                    print("Login button tapped!");
                     },
                    text: StringConsts.loginButton, 

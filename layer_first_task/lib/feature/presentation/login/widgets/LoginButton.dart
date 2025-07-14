@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:layer_first_task/config/asset/strings.dart';
 
-class LoginButton extends StatelessWidget {
+class PrimaryButton extends StatelessWidget {
    final VoidCallback onTap; // تابعی که هنگام کلیک اجرا می‌شود
   final String text; // متن دکمه
 
-  const LoginButton({
+  const PrimaryButton({
     Key? key,
     required this.onTap,
     required this.text,
