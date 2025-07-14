@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:layer_first_task/config/asset/icons_path.dart';
 import 'package:layer_first_task/config/asset/img_path.dart';
+import 'package:layer_first_task/config/asset/svg_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
 import 'package:layer_first_task/config/theme/color_pallet.dart';
 import 'package:layer_first_task/config/theme/text_styles.dart';
@@ -24,17 +25,44 @@ class ProfileScreen extends  StatelessWidget {
               style: lightTextTheme.titleMedium,),
             ],
           ),
-          Row(children: [
-            SvgPicture.asset(
-              IconPath.arrow,
-              width: 40,
-              height: 40,
-              color: ColorPallet.lightColorScheme.onSurface,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 6),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+              SvgPicture.asset(
+                IconPath.arrow,
+                width: 12,
+                height: 12,
+                color: ColorPallet.lightColorScheme.onSurface,
+                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      Text('مجموعه اعتماد',
+                      style: lightTextTheme.titleMedium,),
+                      Row(
+                        children: [
+                        SvgPicture.asset(
+                          SvgPath.ellipse,
+                          width: 65,
+                          height: 65,
+                         ),
+                         ]
+                      ),
+                    ],
+                  ),
+                  SvgPicture.asset(
+                    SvgPath.Avatar,
+                    width: 65,
+                    height: 65,
+                  ),
+                ],
               ),
-            SvgPicture.asset(
-              ImgPath.calendar,
-            ),
-         ] )
+                     ] ),
+          )
         ],
       ),
     );

@@ -4,6 +4,7 @@ import 'package:layer_first_task/core/widgets/main_wrapper.dart';
 import 'package:layer_first_task/feature/presentation/login/screens/VerifyCodeScreen.dart';
 import 'package:layer_first_task/feature/presentation/login/screens/login.screen.dart';
 import 'package:layer_first_task/feature/presentation/orders/screens/orser_screen.dart';
+import 'package:layer_first_task/feature/presentation/profile/screens/profile_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorPallet.lightColorScheme,
         useMaterial3: true, // اگر از Material 3 استفاده می‌کنی
       ),
-      home: const MainWrapper()
+      home: const ProfileScreen(),
     );
   }
 }

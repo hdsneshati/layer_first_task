@@ -24,9 +24,11 @@ class SvgPath {
   static const String calendar = "assets/svgs/calendar.svg";
 
   static const String noResult = "assets/svgs/noResult.svg";
+  static const String Avatar = "assets/svgs/Avatar.svg";
+  static const String ellipse = "assets/svgs/Ellipse.svg";
   static const String mankan = "assets/svgs/mankan.svg";
   static const String events = "assets/svgs/events_bold.svg";
   static const String tagBold = "assets/svgs/tag_bold.svg";
-
+  
   static String connection = "assets/svgs/connection.svg";
 }
