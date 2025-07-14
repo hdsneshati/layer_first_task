@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:layer_first_task/config/asset/strings.dart';
 
 class PrimaryButton extends StatelessWidget {
    final VoidCallback onTap; // تابعی که هنگام کلیک اجرا می‌شود
