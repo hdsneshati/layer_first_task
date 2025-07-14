@@ -2,6 +2,7 @@ class IconPath {
   IconPath._();
 
   static const String admin = "assets/icons/admin.svg";
+  static const String arrow = "assets/icons/Arrow_Right.svg";
   static const String add = "assets/icons/add.svg";
   static const String calender = "assets/icons/calendar.svg";
   static const String chart = "assets/icons/chart.svg";
