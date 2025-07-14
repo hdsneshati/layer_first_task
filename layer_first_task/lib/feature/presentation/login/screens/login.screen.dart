@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:layer_first_task/config/asset/strings.dart';
 import 'package:layer_first_task/config/asset/svg_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
-import 'package:layer_first_task/feature/presentation/login/widgets/LoginButton.dart';
+import 'package:layer_first_task/feature/presentation/login/widgets/primary_bottun.dart';
 import 'package:layer_first_task/feature/presentation/login/widgets/RichTextWidget.dart';
 import 'package:layer_first_task/feature/presentation/login/widgets/TextFieldWidget.dart';
 
