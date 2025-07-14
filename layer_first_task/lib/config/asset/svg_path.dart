@@ -1,6 +1,6 @@
 class SvgPath {
   SvgPath._();
-  static const String logo2 = "assets/svgs/Logo 2.svg";
+  
   static const String chart1 = "assets/svgs/chart_blk.svg";
   static const String emojiSad = "assets/svgs/emoji-sad.svg";
   static const String chart2 = "assets/svgs/chart.svg";

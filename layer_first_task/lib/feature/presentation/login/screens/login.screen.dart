@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           children: [
             SvgPicture.asset(
-              SvgPath.logo2,
+              SvgPath.logo,
               width: 100,
               height: 100,
             ),   
@@ -58,10 +58,11 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
              TextFieldWidget(),
              Spacer(),
-             LoginButton(),
+             LoginButton(),//primery bottun بزارمش تو پوشه core
              20.0.verticalSpace,
              RichTextWidget(),           
              30.0.verticalSpace,
+             
           ],
         ),
       )
