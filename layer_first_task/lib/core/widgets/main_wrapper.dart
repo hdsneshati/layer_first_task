@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:layer_first_task/config/asset/icons_path.dart';
+import 'package:layer_first_task/feature/presentation/analytics/screens/analytics_screen.dart';
+import 'package:layer_first_task/feature/presentation/dashboard/screens/dashboard_screens.dart';
+import 'package:layer_first_task/feature/presentation/orders/screens/orser_screen.dart';
+import 'package:layer_first_task/feature/presentation/profile/screens/profile_screen.dart';
 
 class MainWrapper extends StatefulWidget {
   const MainWrapper({super.key,this.startIndex});
@@ -121,37 +125,8 @@ class _MainWrapperState extends State<MainWrapper> {
   }
 }
 
-class ProfileScreen extends  StatelessWidget {
-  const ProfileScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
 
-class AnalyticsScreen extends StatelessWidget {
-  const AnalyticsScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-class OrdersScreen  extends StatelessWidget {
-  const OrdersScreen ({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
 
-class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}

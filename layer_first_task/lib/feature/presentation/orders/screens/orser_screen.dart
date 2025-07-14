@@ -8,14 +8,14 @@ import 'package:layer_first_task/config/theme/text_styles.dart';
 import 'package:layer_first_task/feature/presentation/login/screens/login.screen.dart';
 import 'package:layer_first_task/feature/presentation/orders/widgets/primary_order_bottun.dart';
 
-class OrserScreen extends StatefulWidget {
-  const OrserScreen({super.key});
+class OrdersScreen extends StatefulWidget {
+  const OrdersScreen({super.key});
 
   @override
-  State<OrserScreen> createState() => _OrserScreenState();
+  State<OrdersScreen> createState() => _OrdersScreenState();
 }
 
-class _OrserScreenState extends State<OrserScreen> {
+class _OrdersScreenState extends State<OrdersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
