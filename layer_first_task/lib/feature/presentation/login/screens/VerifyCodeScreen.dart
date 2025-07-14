@@ -6,7 +6,8 @@ import 'package:layer_first_task/config/asset/icons_path.dart';
 import 'package:layer_first_task/config/asset/strings.dart';
 import 'package:layer_first_task/config/asset/svg_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
-import 'package:layer_first_task/feature/presentation/login/widgets/LoginButton.dart';
+import 'package:layer_first_task/feature/presentation/login/widgets/primary_bottun.dart';
+import 'package:layer_first_task/feature/presentation/login/widgets/verification_massage.dart';
 
 class VerifyCodeScreen extends StatefulWidget {
   const VerifyCodeScreen({super.key});
@@ -22,7 +23,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
     body:Center(
       child: Column(children: [
         127.0.verticalSpace,
-           SvgPicture.asset(
+            SvgPicture.asset(
                 SvgPath.messageText,
                 width: 100,
                 height: 100,
@@ -37,17 +38,10 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                  color: Theme.of(context).colorScheme.onSurface,
               )
               ,),
-             
-
-               
-
-
-
-             
-              Row(
+         
+            Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                
+                children: [                
               Text(' ویرایش شماره'
               ,style: TextStyle(
                 fontFamily: 'dana',
@@ -64,7 +58,12 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
               ), 
                 ],
               ),
-                Text(' دریافت نکردید؟ 02:30تا ارسال مجدد'
+            
+            108.0.verticalSpace,
+
+            VerificationMessage(),
+            
+            Text(' دریافت نکردید؟ 02:30تا ارسال مجدد'
               ,style: TextStyle(
                 fontFamily: 'dana',
                 fontSize: 12.0,
@@ -72,13 +71,16 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
                  color: Theme.of(context).colorScheme.onSurface,
               )
               ,),
-              Spacer(),
-               PrimaryButton( onTap: () {    
+            
+            Spacer(),
+            
+            PrimaryButton( onTap: () {    
                    print("Login button tapped!");
                     },
-                   text: StringConsts.loginButton, 
+                   text: StringConsts.loginButtonVerify, 
                     ),
-                    30.0.verticalSpace,
+            
+            30.0.verticalSpace,
               ],
           ),
     ),
@@ -86,3 +88,4 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
     );
   }
 }
+

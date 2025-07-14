@@ -6,6 +6,7 @@ class StringConsts {
    static const String loginUserNumber = 'شماره تلفن خود  را وارد کنید';
   static const String loginPassword = 'رمز خود را وارد کنید';
   static const String loginButton = 'ارسال کد فعالسازی';
+  static const String loginButtonVerify = ' ورود ';
   static const String loginSignupOption = 'با ثبت نام و ورود به الگو قوانین و مقررات حریم خصوصی الگو را میپذیرید';
   static const String loginSignupOptionaAction = 'ثبت نام کنید';
   static const String loginSuccessSnackBarTitle = 'به الگو خوش اومدی';
