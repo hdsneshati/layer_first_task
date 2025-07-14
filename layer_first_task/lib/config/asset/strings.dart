@@ -14,6 +14,8 @@ class StringConsts {
   static const String loginSuccessSnackBarSubText =
       'با موفقیت به حساب کاربری وارد شدید';
 //! Setup
+  static const String orderTitle = 'مدیریت سفارش ها';
+  static const String newOrder = 'سفارش جدید';
   static const String setupGroupHeader = 'گروه های مشتری';
   static const String setupProductHeader = 'محصولات';
   static const String setupGroupsubtitle = 'گروه های مشتریان خود را اضافه کنید';
