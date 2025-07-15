@@ -7,6 +7,7 @@ import 'package:layer_first_task/config/asset/svg_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
 import 'package:layer_first_task/config/theme/color_pallet.dart';
 import 'package:layer_first_task/config/theme/text_styles.dart';
+import 'package:layer_first_task/feature/presentation/profile/screens/widgets/primary_profile_bottun.dart';
 
 class ProfileScreen extends  StatelessWidget {
   const ProfileScreen({super.key});
@@ -47,8 +48,8 @@ class ProfileScreen extends  StatelessWidget {
                         children: [
                         SvgPicture.asset(
                           SvgPath.ellipse,
-                          width: 65,
-                          height: 65,
+                          width: 12,
+                          height: 12,
                          ),
                          ]
                       ),
@@ -56,13 +57,59 @@ class ProfileScreen extends  StatelessWidget {
                   ),
                   SvgPicture.asset(
                     SvgPath.Avatar,
-                    width: 65,
-                    height: 65,
+                    width: 15,
+                    height: 15,
                   ),
                 ],
               ),
                      ] ),
-          )
+          ),
+     Padding(
+           padding: const EdgeInsets.symmetric(horizontal: 6),
+            child: SingleChildScrollView(
+            child: Column(
+              children: [ 
+                  PrimaryProfileButton(
+                    onTap: (){},                    
+                    text: 'مدیریت محصولات ',                    
+                    icon: SvgPath.glass,                   
+                    ),
+                     Divider(height: 16, color: Colors.grey),
+                  PrimaryProfileButton(
+                    onTap: (){},
+                     text: 'مدیریت گروه مشتریان',
+                     icon: SvgPath.glass,
+                     ),
+                      Divider(height: 16, color: Colors.grey),
+                  PrimaryProfileButton(                    
+                    onTap: (){},                    
+                    text: 'کاربران سیستم',                    
+                    icon: SvgPath.glass,                   
+                    ),
+                     40.0.verticalSpace,
+                  PrimaryProfileButton(                    
+                    onTap: (){},                    
+                    text: 'آموزش کار با سیستم',                    
+                    icon: SvgPath.glass,                   
+                    ),
+                     Divider(height: 16, color: Colors.black),
+                  PrimaryProfileButton(                    
+                    onTap: (){},                    
+                    text: 'حریم خصوصی',                    
+                    icon: SvgPath.glass,                   
+                    ),
+                    ]
+                )
+             )
+            ),
+             
+         SvgPicture.asset(
+          IconPath.call,
+          width: 40,
+          height: 40,
+         ),
+
+       
         ],
       ),
     );
