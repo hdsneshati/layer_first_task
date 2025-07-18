@@ -51,11 +51,12 @@ class IconPath {
 
   static const String profileMarketing = "assets/icons/marketing.svg";
  
- 
+  
   static const String hanger = "assets/icons/hanger.svg";
   static const String profile2user = "assets/icons/profile-2user.svg";
   static const String securitysafe = "assets/icons/security-safe.svg";
   static const String videoplay = "assets/icons/video-play.svg";
+  static const String handle = "assets/icons/handle.svg";
   
 
 

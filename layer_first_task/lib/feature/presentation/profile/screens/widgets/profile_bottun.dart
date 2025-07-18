@@ -2,17 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:layer_first_task/config/asset/icons_path.dart';
 import 'package:layer_first_task/config/asset/svg_path.dart';
+import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
 
 class PrimaryProfileButton extends StatelessWidget {
   final VoidCallback onTap; // تابعی که هنگام کلیک اجرا می‌شود
   final String text; // متن دکمه
   final String icon;
+  final double w;
+  final double h;
 
   const PrimaryProfileButton({
     Key? key,
     required this.onTap,
     required this.text,
     required this.icon,
+    required this.w,
+    required this.h,
+
   }) : super(key: key);
 
 
@@ -27,19 +33,20 @@ class PrimaryProfileButton extends StatelessWidget {
        height: 53,        
        decoration: BoxDecoration(
          borderRadius: BorderRadius.circular(1),      
-         color:Theme.of(context).colorScheme.outline,                                   
-                ),
-    
+         color:Theme.of(context).colorScheme.secondaryContainer,                                   
+                ),    
     child:
-      Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+      Row(        
         children: [
-          SvgPicture.asset(
-            icon,
+          12.0.horizontalSpace,
+
+            SvgPicture.asset(
+            IconPath.handle,
             width: 36,
-            height: 36,
-            color: Theme.of(context).colorScheme.secondary,
-          ),
+            height: 36,),
+
+          const  Spacer(),
+
           Text(
             text,
            style: TextStyle(
@@ -49,12 +56,18 @@ class PrimaryProfileButton extends StatelessWidget {
             color: Theme.of(context).colorScheme.onSurface,
             ),
                       ),
-             Spacer(),
-            SvgPicture.asset(
-            SvgPath.handle,
-            width: 36,
-            height: 36,
+
+           16.0.horizontalSpace,
+
+           SvgPicture.asset(
+            icon,
+            width: w,
+            height: h,
+            color: Theme.of(context).colorScheme.secondary,
+           
           ),         
+         
+           12.0.horizontalSpace,
         ],
       ),
     
