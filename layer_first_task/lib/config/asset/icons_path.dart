@@ -57,6 +57,7 @@ class IconPath {
   static const String securitysafe = "assets/icons/security-safe.svg";
   static const String videoplay = "assets/icons/video-play.svg";
   static const String handle = "assets/icons/handle.svg";
+  static const String wrraper = "assets/icons/trailing-icon-wrapper.svg";
   
 
 
