@@ -7,7 +7,9 @@ import 'package:layer_first_task/config/asset/svg_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
 import 'package:layer_first_task/config/theme/color_pallet.dart';
 import 'package:layer_first_task/config/theme/text_styles.dart';
-import 'package:layer_first_task/feature/presentation/profile/screens/widgets/primary_profile_bottun.dart';
+import 'package:layer_first_task/feature/presentation/profile/screens/widgets/call_information_widget.dart';
+import 'package:layer_first_task/feature/presentation/profile/screens/widgets/header_widget.dart';
+import 'package:layer_first_task/feature/presentation/profile/screens/widgets/profile_bottun.dart';
 
 class ProfileScreen extends  StatelessWidget {
   const ProfileScreen({super.key});
@@ -17,8 +19,10 @@ class ProfileScreen extends  StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          81.0.verticalSpace,
-          Row(
+         
+                  81.0.verticalSpace,
+        
+                  Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               250.0.horizontalSpace,
@@ -26,92 +30,60 @@ class ProfileScreen extends  StatelessWidget {
               style: lightTextTheme.titleMedium,),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 6),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-              SvgPicture.asset(
-                IconPath.arrow,
-                width: 12,
-                height: 12,
-                color: ColorPallet.lightColorScheme.onSurface,
-                ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      Text('مجموعه اعتماد',
-                      style: lightTextTheme.titleMedium,),
-                      Row(
-                        children: [
-                        SvgPicture.asset(
-                          SvgPath.ellipse,
-                          width: 12,
-                          height: 12,
-                         ),
-                         ]
-                      ),
-                    ],
-                  ),
-                  SvgPicture.asset(
-                    SvgPath.Avatar,
-                    width: 15,
-                    height: 15,
-                  ),
-                ],
-              ),
-                     ] ),
-          ),
-     Padding(
-           padding: const EdgeInsets.symmetric(horizontal: 6),
-            child: SingleChildScrollView(
-            child: Column(
-              children: [ 
+                
+                  20.0.verticalSpace,     
+                  
+                  const   HeaderWidget(),
+    
                   PrimaryProfileButton(
                     onTap: (){},                    
                     text: 'مدیریت محصولات ',                    
-                    icon: SvgPath.glass,                   
+                    icon: SvgPath.hanger, 
+                    w: 36.64,         
+                    h: 24,         
                     ),
-                     Divider(height: 16, color: Colors.grey),
+                  const   Divider(height: 1, color: Colors.grey,indent: 2,endIndent: 2, ),
                   PrimaryProfileButton(
                     onTap: (){},
                      text: 'مدیریت گروه مشتریان',
-                     icon: SvgPath.glass,
+                     icon: IconPath.tag,
+                     w: 36,
+                     h: 36,
                      ),
-                      Divider(height: 16, color: Colors.grey),
+                   const   Divider(height: 1, color: Colors.grey,indent: 2,endIndent: 2,),
                   PrimaryProfileButton(                    
                     onTap: (){},                    
                     text: 'کاربران سیستم',                    
-                    icon: SvgPath.glass,                   
+                    icon: IconPath.profile2user, 
+                    w: 36,
+                    h: 36,                  
                     ),
                      40.0.verticalSpace,
                   PrimaryProfileButton(                    
                     onTap: (){},                    
                     text: 'آموزش کار با سیستم',                    
-                    icon: SvgPath.glass,                   
+                    icon: IconPath.videoplay,      
+                    w: 32,             
+                    h: 32,
                     ),
-                     Divider(height: 16, color: Colors.black),
+                    const Divider(height: 1, color: Colors.grey,indent: 2,endIndent: 2,),
                   PrimaryProfileButton(                    
                     onTap: (){},                    
                     text: 'حریم خصوصی',                    
-                    icon: SvgPath.glass,                   
+                    icon: IconPath.securitysafe, 
+                    w: 32,     
+                    h: 32,             
                     ),
-                    ]
-                )
-             )
-            ),
-             
-         SvgPicture.asset(
-          IconPath.call,
-          width: 40,
-          height: 40,
-         ),
+          
+                 const Spacer(),
 
-       
+                const CallInformationWidget(),
+                
+                 80.0.verticalSpace,
         ],
       ),
     );
   }
 }
+
+
