@@ -59,6 +59,7 @@ class IconPath {
   static const String handle = "assets/icons/handle.svg";
   static const String wrraper = "assets/icons/trailing-icon-wrapper.svg";
   static const String chartbutton = "assets/icons/Chartbutton.svg";
+  static const String olgoo = "assets/icons/olgoo.svg";
   
 
 
