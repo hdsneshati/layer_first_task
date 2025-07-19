@@ -21,6 +21,7 @@ class _SearchHeaderState extends State<SearchHeader> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
            Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               buttonheader(context,'جاری'),
               buttonheader(context,'اماده'),
