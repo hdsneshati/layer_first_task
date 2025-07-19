@@ -16,11 +16,11 @@ class Card extends StatelessWidget {
                
                 Row(
                   children: [
-                    Column(),
+                  const  Column(),
                     Container(),
                   ],
                 ),
-                Row(
+             const   Row(
                   children: [
                     Text(
                       'مبلغ پرداختی',
