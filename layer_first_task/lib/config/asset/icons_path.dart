@@ -63,6 +63,8 @@ class IconPath {
   static const String newtag = "assets/icons/newtag.svg";
   static const String newmassage = "assets/icons/newmessage-text.svg";
   static const String massagetext = "assets/icons/message-text.svg";
+  static const String paperclip = "assets/icons/paperclip.svg";
+  static const String trash = "assets/icons/trash.svg";
   
 
 

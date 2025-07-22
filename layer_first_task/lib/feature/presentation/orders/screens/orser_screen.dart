@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:layer_first_task/config/asset/icons_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
+import 'package:layer_first_task/feature/presentation/orders/screens/order.dart';
+import 'package:layer_first_task/feature/presentation/orders/widgets/filter_data_widget.dart';
 import 'package:layer_first_task/feature/presentation/orders/widgets/header.dart';
 import 'package:layer_first_task/feature/presentation/orders/widgets/search_header.dart';
 
@@ -30,76 +30,15 @@ class _OrdersScreenState extends State<OrdersScreen> {
             indent: 16, // فاصله از چپ
             endIndent: 16, // فاصله از راست
           ),
-          Row(
-            children: [
-              Row(),
-              Row(
-                children: [
-                    Row(
-            children: [
-              InkWell(
-                child: Container(
-                  width: 68,
-                  height: 24,
-                  decoration: BoxDecoration(
-                    color: Color(0xffE8EBF1),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'فیلتر   ',
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.onSurface,
-                        ),
-                      ),
-                      SvgPicture.asset(
-                        width: 18,
-                        height: 19,
-                        IconPath.filter,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-        
-               InkWell(
-                child: Container(
-                  width: 118,
-                  height: 24,
-                  decoration: BoxDecoration(
-                    color: Color(0xffE8EBF1),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'سفارشات امروز   ',
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.onSurface,
-                        ),
-                      ),
-                      SvgPicture.asset(
-                        width: 18,
-                        height: 19,
-                        IconPath.calender,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-         
-                ],
-              ),
-            ],
-          ),
-          const Card(),
+          const FilterData(),
+          ElevatedButton(
+          onPressed: () => MySimpleBottomSheet.show(context),
+          child: const Text("نمایش"),
+        ),
+      
         ],
       ),
     ));
   }
 }
+
