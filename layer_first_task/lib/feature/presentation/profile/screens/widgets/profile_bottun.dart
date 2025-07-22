@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:layer_first_task/config/asset/icons_path.dart';
-import 'package:layer_first_task/config/asset/svg_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
 
 class PrimaryProfileButton extends StatelessWidget {
   final VoidCallback onTap; // تابعی که هنگام کلیک اجرا می‌شود
-  final String text; // متن دکمه
+  final String text;
   final String icon;
   final double w;
   final double h;
@@ -33,7 +32,7 @@ class PrimaryProfileButton extends StatelessWidget {
        height: 53,        
        decoration: BoxDecoration(
          borderRadius: BorderRadius.circular(1),      
-         color:Theme.of(context).colorScheme.secondaryContainer,                                   
+         color:Theme.of(context).colorScheme.secondaryContainer,                                     
                 ),    
     child:
       Row(        

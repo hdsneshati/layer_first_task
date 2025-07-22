@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorPallet.lightColorScheme,
         useMaterial3: true, 
       ),
-      home: const OrdersScreen(),
+      home: const ProfileScreen(),
     );
   }
 }

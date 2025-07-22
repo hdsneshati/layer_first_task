@@ -14,7 +14,7 @@ class CallInformationWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        24.0.horizontalSpace,
+        16.0.horizontalSpace,
         InkWell(
           child: Container(
             width: 148,
@@ -47,22 +47,17 @@ class CallInformationWidget extends StatelessWidget {
         const Spacer(),
         InkWell(
           onTap: () {},
-          child: Container(
-            width: 40,
-            height: 40,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(24),
-              color: Theme.of(context).colorScheme.secondary,
-            ),
+         child:  CircleAvatar(
+            radius: 24,
+            backgroundColor: Theme.of(context).colorScheme.secondary,
             child: SvgPicture.asset(
               IconPath.call,
-              width: 20,
-              height: 20,
-              color: Theme.of(context).colorScheme.onSecondary,
+              color:Theme.of(context).colorScheme.onSecondary,
+
             ),
           ),
         ),
-        10.0.horizontalSpace,
+        16.0.horizontalSpace,
       ],
     );
   }

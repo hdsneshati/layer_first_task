@@ -21,50 +21,53 @@ class HeaderWidget extends StatelessWidget {
              borderRadius: BorderRadius.circular(1),      
              color:Theme.of(context).colorScheme.secondaryContainer,                                   
             ),  
-          child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-        SvgPicture.asset(
-          IconPath.arrow,
-          width: 12,
-          height: 12,
-          color: ColorPallet.lightColorScheme.onSurface,
-          ),
-      Row(
-            
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text('مجموعه اعتماد',
-                  style: lightTextTheme.titleMedium,),
-                  
-                  Row(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                       const  Text('اشتراک فعال',
-                     style: TextStyle(
-                      fontSize: 12,
-                      color: Color.fromARGB(143, 139, 139, 129),
-                     ),
-                  ),
                     SvgPicture.asset(
-                      SvgPath.ellipse,
-                      width: 12,
-                      height: 12,
-                     ),
-                  
-                     ]
-                  ),
-                ],
-              ),
-              SvgPicture.asset(
-                SvgPath.Avatar,
-                width: 65,
-                height: 65,
-              ),
-            ],
+            IconPath.arrow,
+            width: 12,
+            height: 12,
+            color: ColorPallet.lightColorScheme.onSurface,
+            ),
+                  Row(
+              
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text('مجموعه اعتماد',
+                    style: lightTextTheme.titleMedium,),
+                    
+                    Row(
+                      children: [
+                         const  Text('اشتراک فعال',
+                       style: TextStyle(
+                        fontSize: 12,
+                        color: Color.fromARGB(143, 139, 139, 129),
+                       ),
+                    ),
+                      SvgPicture.asset(
+                        SvgPath.ellipse,
+                        width: 12,
+                        height: 12,
+                       ),
+                    
+                       ]
+                    ),
+                  ],
+                ),
+                SvgPicture.asset(
+                  SvgPath.Avatar,
+                  width: 65,
+                  height: 65,
+                ),
+              ],
+            ),
+              ] ),
           ),
-            ] ),
         ),
              
     );
