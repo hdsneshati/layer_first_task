@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:layer_first_task/config/asset/icons_path.dart';
 import 'package:layer_first_task/config/asset/svg_path.dart';
+import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
 import 'package:layer_first_task/config/theme/color_pallet.dart';
 
 class HeaderDashboeard extends StatelessWidget {
@@ -21,6 +22,7 @@ class HeaderDashboeard extends StatelessWidget {
             width: 24,
             height: 24,
           ),
+          16.0.horizontalSpace,
            SvgPicture.asset(
                 IconPath.setting,
                 width: 24,
@@ -41,19 +43,22 @@ class HeaderDashboeard extends StatelessWidget {
                   fontWeight: FontWeight.w800,
                 ),
               ),
-              Text('مدیر ',
-               style: TextStyle(
-                  fontFamily: "dana",
-                  fontSize: 12,
-                  color: ColorPallet.lightColorScheme.surfaceBright,
-                  fontWeight: FontWeight.w800,
-                ),),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Text('مدیر ',
+                 style: TextStyle(
+                    fontFamily: "dana",
+                    fontSize: 12,
+                    color: ColorPallet.lightColorScheme.surfaceBright,
+                    fontWeight: FontWeight.w800,
+                  ),),
+              ),
             ],
           ),
               SvgPicture.asset(
                 SvgPath.Avatar,
-                width: 65,
-                height: 65,
+                width: 40,
+                height: 40,
               ),
             ],
           ),

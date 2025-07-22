@@ -7,33 +7,36 @@ class ButtonsDashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        ButtonD(
-          label:  '  گزارش گیری ',
-          iconPath:IconPath.chartbutton,
-          color1: Color(0xff4390E8),
-          color2: Color(0xff9AC2FF),
-          w: 35,
-          h: 35 ,
-        ),
-         ButtonD(
-          label:  ' محصولات',
-          iconPath:IconPath.hanger,
-          color1: Color(0xffE74242),
-          color2: Color(0xffFF8C8C),
-          w: 36, h: 24,
-        ),
-         ButtonD(
-          label:  '  گروه مشتریان',
-          iconPath:IconPath.tag,
-          color1: Color(0xffE8A043),
-          color2: Color(0xffFEEA99),
-          w: 30,
-          h: 30,
-        ),
-      ],
+    return const Padding(
+      padding:  EdgeInsets.all(26.0),
+      child:  Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          ButtonD(
+            label:  '  گزارش گیری ',
+            iconPath:IconPath.chartbutton,
+            color1: Color(0xff4390E8),
+            color2: Color(0xff9AC2FF),
+            w: 35,
+            h: 35 ,
+          ),
+           ButtonD(
+            label:  ' محصولات',
+            iconPath:IconPath.hanger,
+            color1: Color(0xffE74242),
+            color2: Color(0xffFF8C8C),
+            w: 36, h: 24,
+          ),
+           ButtonD(
+            label:  '  گروه مشتریان',
+            iconPath:IconPath.tag,
+            color1: Color(0xffE8A043),
+            color2: Color(0xffFEEA99),
+            w: 30,
+            h: 30,
+          ),
+        ],
+      ),
     );
   }
 }
