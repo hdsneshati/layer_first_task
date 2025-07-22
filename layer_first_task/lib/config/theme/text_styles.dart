@@ -29,9 +29,28 @@ TextTheme lightTextTheme = TextTheme(
         fontSize: 14,
         fontWeight: FontWeight.w700,
         color: ColorPallet.lightColorScheme.onPrimary),
+
+
+
+
+
+bodySmall: TextStyle(
+        fontFamily: "dana",
+        fontSize: 11,
+        fontWeight: FontWeight.w400,
+        color: ColorPallet.lightColorScheme.onSurface),
+
+
+
+
+
+
 //! body
     bodyMedium: TextStyle(
         fontFamily: "dana",
         fontSize: 14,
         fontWeight: FontWeight.w500,
         color: ColorPallet.lightColorScheme.surfaceBright));
+
+
+ 
