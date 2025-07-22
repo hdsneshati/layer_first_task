@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:layer_first_task/config/theme/color_pallet.dart';
-import 'package:layer_first_task/core/widgets/main_wrapper.dart';
-import 'package:layer_first_task/feature/presentation/dashboard/screens/dashboard_screens.dart';
-import 'package:layer_first_task/feature/presentation/intro/screens/splash_screen.dart';
-import 'package:layer_first_task/feature/presentation/login/screens/VerifyCodeScreen.dart';
-import 'package:layer_first_task/feature/presentation/orders/screens/orser_screen.dart';
-import 'package:layer_first_task/feature/presentation/profile/screens/profile_screen.dart';
+import 'package:layer_first_task/feature/presentation/orders/screens/bottunscroler.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +18,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorPallet.lightColorScheme,
         useMaterial3: true, 
       ),
-      home: const VerifyCodeScreen(),
+      debugShowCheckedModeBanner: false,
+      home: const Scroll2(),
     );
   }
 }
