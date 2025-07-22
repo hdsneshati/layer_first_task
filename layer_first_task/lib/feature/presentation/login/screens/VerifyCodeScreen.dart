@@ -1,13 +1,11 @@
-import 'dart:ffi';
-
+import 'package:layer_first_task/config/asset/strings.dart';
+import 'package:layer_first_task/feature/presentation/login/widgets/primary_bottun.dart';
+import 'package:layer_first_task/feature/presentation/login/widgets/verification_massage.dart';
+import 'package:pinput/pinput.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:layer_first_task/config/asset/icons_path.dart';
-import 'package:layer_first_task/config/asset/strings.dart';
-import 'package:layer_first_task/config/asset/svg_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
-import 'package:layer_first_task/feature/presentation/login/widgets/primary_bottun.dart';
-import 'package:layer_first_task/feature/presentation/login/widgets/verification_massage.dart';
 
 class VerifyCodeScreen extends StatefulWidget {
   const VerifyCodeScreen({super.key});
@@ -24,7 +22,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
       child: Column(children: [
         127.0.verticalSpace,
             SvgPicture.asset(
-                SvgPath.messageText,
+                IconPath.massagetext,
                 width: 100,
                 height: 100,
                 color: Theme.of(context).colorScheme.primary,
@@ -34,7 +32,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
               ,style: TextStyle(
                 fontFamily: 'dana',
                 fontSize: 12.0,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w500,
                  color: Theme.of(context).colorScheme.onSurface,
               )
               ,),
@@ -61,7 +59,15 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
             
             108.0.verticalSpace,
 
-            VerificationMessage(),
+
+         Pinput(
+        length: 5,
+          onCompleted: (pin) => print('Pin entered: $pin'),
+        ),
+
+
+
+           const VerificationMessage(),
             
             Text(' دریافت نکردید؟ 02:30تا ارسال مجدد'
               ,style: TextStyle(
@@ -72,10 +78,10 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
               )
               ,),
             
-            Spacer(),
+          const  Spacer(),
             
             PrimaryButton( onTap: () {    
-                   print("Login button tapped!");
+                   
                     },
                    text: StringConsts.loginButtonVerify, 
                     ),
