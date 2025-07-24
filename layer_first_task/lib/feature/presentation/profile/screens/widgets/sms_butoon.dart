@@ -4,20 +4,20 @@ import 'package:layer_first_task/config/asset/icons_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
 import 'package:layer_first_task/config/theme/color_pallet.dart';
 
-class smsButton extends StatelessWidget {
-  const smsButton({
+class SmsButton extends StatelessWidget {
+  const SmsButton({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-       width: 387, 
-     height: 82,        
-     decoration: BoxDecoration(
-       borderRadius: BorderRadius.circular(4),      
-       color:Theme.of(context).colorScheme.secondaryContainer,                                   
-      ), 
+      width: 387,
+      height: 82,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(4),
+        color: Theme.of(context).colorScheme.secondaryContainer,
+      ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
@@ -59,20 +59,18 @@ class smsButton extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                   
-                     Align(
+                    Align(
                       alignment: Alignment.centerRight,
-                       child: Text(
-                          ' بسته پیامک',
-                          style: TextStyle(
-                            fontFamily: "dana",
-                            fontSize: 12,
-                            color: ColorPallet.lightColorScheme.onSurface,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      child: Text(
+                        ' بسته پیامک',
+                        style: TextStyle(
+                          fontFamily: "dana",
+                          fontSize: 12,
+                          color: ColorPallet.lightColorScheme.onSurface,
+                          fontWeight: FontWeight.bold,
                         ),
-                     ),
-                    
+                      ),
+                    ),
                     Text(
                       ' برای تمدید اشتراک و بسته های پیامک ... ',
                       style: TextStyle(
@@ -88,8 +86,10 @@ class smsButton extends StatelessWidget {
                   width: 36,
                   height: 36,
                   IconPath.newmassage,
-                  
-                  color: ColorPallet.lightColorScheme.primary,
+                  colorFilter: ColorFilter.mode(
+                    ColorPallet.lightColorScheme.primary,
+                    BlendMode.srcIn,
+                  ),
                 ),
               ],
             ),

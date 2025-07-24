@@ -30,7 +30,10 @@ class HeaderWidget extends StatelessWidget {
             IconPath.arrow,
             width: 12,
             height: 12,
-            color: ColorPallet.lightColorScheme.onSurface,
+             colorFilter: ColorFilter.mode(
+                             ColorPallet.lightColorScheme.onSurface,
+                                   BlendMode.srcIn,
+                          ),
             ),
                   Row(
               
@@ -60,7 +63,7 @@ class HeaderWidget extends StatelessWidget {
                   ],
                 ),
                 SvgPicture.asset(
-                  SvgPath.Avatar,
+                  SvgPath.avatar,
                   width: 65,
                   height: 65,
                 ),

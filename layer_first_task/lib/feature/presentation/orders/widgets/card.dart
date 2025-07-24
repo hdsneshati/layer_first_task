@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:layer_first_task/config/asset/icons_path.dart';
+import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
 import 'package:layer_first_task/config/theme/color_pallet.dart';
 
 class OrderItem {
@@ -26,42 +27,26 @@ class CardOrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.secondaryContainer,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      width: double.maxFinite,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 31.0,vertical: 10.0),
+      child: Container(
+        width: 366,
+        height: 143,
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.secondaryContainer,
+          borderRadius: BorderRadius.circular(10),
+        ),
         child: Column(
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(customerName),
-                    Row(
-                      children: [
-                        SvgPicture.asset(
-                          IconPath.calender,
-                          height: 24,
-                          width: 24,
-                        ),
-                      ],
-                    ),
-                    SvgPicture.asset(
-                      IconPath.paperclip,
-                      height: 24,
-                      width: 24,
-                    ),
-                  ],
-                ),
-                const SizedBox(width: 12),
-                Expanded(
+                // بخش آیتم‌ها
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 11.0),
                   child: Container(
+                    width: 212,
+                    height: 90,
                     decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.secondaryContainer,
                       borderRadius: BorderRadius.circular(10),
@@ -73,7 +58,7 @@ class CardOrderScreen extends StatelessWidget {
                             Row(
                               children: [
                                 Text(
-                                  item.title,
+                                  item.value,
                                   style: TextStyle(
                                     fontFamily: "dana",
                                     fontSize: 7,
@@ -81,19 +66,20 @@ class CardOrderScreen extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
-                                const SizedBox(width: 4),
+                                
+                               const Spacer(),
                                 Text(
                                   item.desc,
-                                  style: TextStyle(
+                                  style:const TextStyle(
                                     fontFamily: "dana",
                                     fontSize: 7,
-                                    color: ColorPallet.lightColorScheme.onSurface,
+                                    color: Color(0xff000000),
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
-                                const Spacer(),
+                                const SizedBox(width: 40),
                                 Text(
-                                  item.value,
+                                  item.title,
                                   style: TextStyle(
                                     fontFamily: "dana",
                                     fontSize: 7,
@@ -103,17 +89,81 @@ class CardOrderScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
+                           
+                           8.0.verticalSpace,
+
                             const Divider(
                               color: Color(0xffADADAD),
                               thickness: 1,
-                              height: 15,
-                              indent: 10,
-                              endIndent: 10,
+                              height: 5,
+                              indent: 0,
+                              endIndent: 0,
                             ),
+                            8.0.verticalSpace
                           ],
-                        )),
+                        )
+                        
+                        ),
+                   
+                   
+                     const   Center(
+                          child: Row(
+                            children: [
+                              Text('4',
+                               style: TextStyle(
+                                      fontFamily: "dana",
+                                      fontSize: 7,
+                                      color: Color(0xff000000),
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                    ),
+                              Text('محصول دیگر',
+                               style: TextStyle(
+                                      fontFamily: "dana",
+                                      fontSize: 7,
+                                      color: Color(0xff000000),
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                    ),
+                          
+                            ],
+                          ),
+                        ),
+
                       ],
                     ),
+                  ),
+                ),
+                const SizedBox(width: 12),
+                // بخش اطلاعات مشتری
+                Flexible(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(customerName,
+                       style: TextStyle(
+                                    fontFamily: "dana",
+                                    fontSize: 13,
+                                    color: ColorPallet.lightColorScheme.onSurface,
+                                    fontWeight: FontWeight.w400,
+                                  ),),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            IconPath.calender,
+                            height: 24,
+                            width: 24,
+                          ),
+                          const SizedBox(width: 8),
+                          SvgPicture.asset(
+                            IconPath.paperclip,
+                            height: 24,
+                            width: 24,
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -122,7 +172,17 @@ class CardOrderScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(status),
+                Row(
+                  children: [
+
+                    Text(status),
+                     SvgPicture.asset(
+                            IconPath.ellipsered,
+                            height: 24,
+                            width: 24,
+                          ),
+                  ],
+                ),
                 Text(payment),
               ],
             ),

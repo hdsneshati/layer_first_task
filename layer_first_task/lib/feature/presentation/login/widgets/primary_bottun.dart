@@ -5,10 +5,10 @@ class PrimaryButton extends StatelessWidget {
   final String text; // متن دکمه
 
   const PrimaryButton({
-    Key? key,
+    super. key,
     required this.onTap,
     required this.text,
-  }) : super(key: key);
+  }) ;
 
 
   @override

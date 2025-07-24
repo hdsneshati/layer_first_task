@@ -42,16 +42,17 @@ class _OrdersScreenState extends State<OrdersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
+        body: 
+       SingleChildScrollView(
+       child: Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Center(
         child: Column(
           children: [
             100.0.verticalSpace,
             const HeaderOrders(),
             81.0.verticalSpace,
             const SearchHeader(),
-            const Divider(
+           const Divider(
               color: Color(0xff003A02), // رنگ خط
               thickness: 1, // ضخامت خط
               height: 20, // فاصله عمودی اطراف خط
@@ -74,9 +75,12 @@ class _OrdersScreenState extends State<OrdersScreen> {
               onPressed: _showCustomBottomSheet,
               child: const Text('نمایش جزئیات سفارش'),
             ),
+        
+          
           ],
         ),
       ),
-    ));
+    )
+    );
   }
 }

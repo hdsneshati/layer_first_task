@@ -11,14 +11,14 @@ class PrimaryProfileButton extends StatelessWidget {
   final double h;
 
   const PrimaryProfileButton({
-    Key? key,
+   super. key,
     required this.onTap,
     required this.text,
     required this.icon,
     required this.w,
     required this.h,
 
-  }) : super(key: key);
+  }) ;
 
 
   @override
@@ -62,8 +62,11 @@ class PrimaryProfileButton extends StatelessWidget {
             icon,
             width: w,
             height: h,
-            color: Theme.of(context).colorScheme.secondary,
-           
+           colorFilter: ColorFilter.mode(
+                        Theme.of(context).colorScheme.secondary,
+
+   BlendMode.srcIn,
+),
           ),         
          
            12.0.horizontalSpace,

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:layer_first_task/config/asset/icons_path.dart';
-import 'package:layer_first_task/config/asset/svg_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
-import 'package:layer_first_task/feature/presentation/profile/screens/profile_screen.dart';
 
 class CallInformationWidget extends StatelessWidget {
   const CallInformationWidget({
@@ -21,7 +19,7 @@ class CallInformationWidget extends StatelessWidget {
             height: 40,
             decoration: BoxDecoration(
               border: Border.all(
-                color:Theme.of(context).colorScheme.secondary, // 🎨 رنگ خط دور
+                color: Theme.of(context).colorScheme.secondary, // 🎨 رنگ خط دور
                 width: 1, // ضخامت خط
               ),
               borderRadius: BorderRadius.circular(4),
@@ -47,13 +45,15 @@ class CallInformationWidget extends StatelessWidget {
         const Spacer(),
         InkWell(
           onTap: () {},
-         child:  CircleAvatar(
+          child: CircleAvatar(
             radius: 24,
             backgroundColor: Theme.of(context).colorScheme.secondary,
             child: SvgPicture.asset(
               IconPath.call,
-              color:Theme.of(context).colorScheme.onSecondary,
-
+              colorFilter: ColorFilter.mode(
+                Theme.of(context).colorScheme.onSecondary,
+                BlendMode.srcIn,
+              ),
             ),
           ),
         ),

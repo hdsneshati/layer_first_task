@@ -11,7 +11,8 @@ class SearchHeader extends StatefulWidget {
 }
 
 class _SearchHeaderState extends State<SearchHeader> {
-  bool isSelected = false;
+  int selectedIndex = 0;
+
   
   @override
   Widget build(BuildContext context) {
@@ -23,9 +24,9 @@ class _SearchHeaderState extends State<SearchHeader> {
            Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              buttonheader(context,'جاری'),
-              buttonheader(context,'اماده'),
-              buttonheader(context,'تحویلی'),
+              buttonheader(context,'جاری',0),
+              buttonheader(context,'اماده',1),
+              buttonheader(context,'تحویلی',2),
             ],
           ),
           Row(
@@ -64,38 +65,36 @@ class _SearchHeaderState extends State<SearchHeader> {
     );
   }
 
-  InkWell buttonheader(BuildContext context,String label) {
+   InkWell buttonheader(BuildContext context, String label, int index) {
     return InkWell(
-              onTap: (){
-                isSelected = true;
-              },
-              child: Container(
-                width: 56,
-                height: 48,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                     color: isSelected ? Theme.of(context)
-                        .colorScheme
-                        .primary  : Theme.of(context)
-                        .colorScheme
-                        .secondary, // 🎨 رنگ خط دور
-                    width: 1, // ضخامت خط
-                  ),
-                  color: Theme.of(context).colorScheme.secondaryContainer,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Align(
-                  alignment: Alignment.center, // موقعیت‌دهی متن
-                 // widthFactor: 1.0, // کنترل عرض
-                //  heightFactor: 1.0, // کنترل ارتفاع
-                  child: Text(
-                    label,
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.onSurface,
-                    ),
-                  ),
-                ),
-              ),
-            );
+      onTap: () {
+        setState(() {
+          selectedIndex = index;
+        });
+      },
+      child: Container(
+        width: 56,
+        height: 48,
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: selectedIndex == index
+                ? Theme.of(context).colorScheme.primary
+                : Theme.of(context).colorScheme.secondary,
+            width: 1,
+          ),
+          color: Theme.of(context).colorScheme.secondaryContainer,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Align(
+          alignment: Alignment.center,
+          child: Text(
+            label,
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.onSurface,
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

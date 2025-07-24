@@ -17,9 +17,7 @@ class VerificationMessage extends StatelessWidget {
             height: 50,
             child: TextField(
               maxLength: 1,
-              style: TextStyle(
-          
-              ),
+             
               decoration: InputDecoration(
                 counterText: '',
                 border: OutlineInputBorder(

@@ -57,15 +57,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   20.0.horizontalSpace,
                   ]
             ),
-             TextFieldWidget(),
-             Spacer(),
+          const   TextFieldWidget(),
+           const    Spacer(),
              PrimaryButton( onTap: () {    
-                   print("Login button tapped!");
+                  
                     },
                    text: StringConsts.loginButton, 
                     ),
              20.0.verticalSpace,
-             RichTextWidget(),           
+           const   RichTextWidget(),           
              30.0.verticalSpace,
              
           ],

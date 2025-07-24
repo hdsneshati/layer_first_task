@@ -25,7 +25,7 @@ class SvgPath {
 
   static const String noResult = "assets/svgs/noResult.svg";
   static const String handle = "assets/svgs/handle.svg";
-  static const String Avatar = "assets/svgs/Avatar.svg";
+  static const String avatar = "assets/svgs/Avatar.svg";
   static const String ellipse = "assets/svgs/Ellipse.svg";
   static const String mankan = "assets/svgs/mankan.svg";
   static const String events = "assets/svgs/events_bold.svg";

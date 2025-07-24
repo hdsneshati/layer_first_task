@@ -10,7 +10,7 @@ class PrimaryOrderButton extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.text,
-  }) ;
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,10 @@ class PrimaryOrderButton extends StatelessWidget {
                 IconPath.add,
                 width: 21,
                 height: 21,
-                color: Theme.of(context).colorScheme.onPrimary,
+                colorFilter: ColorFilter.mode(
+                  Theme.of(context).colorScheme.onPrimary,
+                  BlendMode.srcIn,
+                ),
               ),
               Text(
                 text,

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:layer_first_task/config/asset/icons_path.dart';
-import 'package:layer_first_task/config/asset/img_path.dart';
 import 'package:layer_first_task/config/asset/svg_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
-import 'package:layer_first_task/config/theme/color_pallet.dart';
 import 'package:layer_first_task/config/theme/text_styles.dart';
 import 'package:layer_first_task/feature/presentation/profile/screens/widgets/call_information_widget.dart';
 import 'package:layer_first_task/feature/presentation/profile/screens/widgets/header_widget.dart';
@@ -36,7 +33,7 @@ class ProfileScreen extends StatelessWidget {
          
           const HeaderWidget(),
         
-          const smsButton(),
+          const SmsButton(),
          
           Container(
             decoration: BoxDecoration(

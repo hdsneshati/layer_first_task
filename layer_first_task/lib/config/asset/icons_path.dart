@@ -65,6 +65,7 @@ class IconPath {
   static const String massagetext = "assets/icons/message-text.svg";
   static const String paperclip = "assets/icons/paperclip.svg";
   static const String trash = "assets/icons/trash.svg";
+  static const String ellipsered = "assets/icons/EllipseRed.svg";
   
 
 

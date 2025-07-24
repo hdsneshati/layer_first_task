@@ -37,7 +37,7 @@ class BottunScrollerScreen extends StatelessWidget {
               Expanded(child: Text('تحویل حضوری در مرکز توزیع پوشاک - ۰۱۱')),
             ],
           ),
-          const SizedBox(height: 8),
+         const Spacer(),
           // دکمه
           InkWell(
             onTap: () {},

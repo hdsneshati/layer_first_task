@@ -56,7 +56,7 @@ class HeaderDashboeard extends StatelessWidget {
             ],
           ),
               SvgPicture.asset(
-                SvgPath.Avatar,
+                SvgPath.avatar,
                 width: 40,
                 height: 40,
               ),
