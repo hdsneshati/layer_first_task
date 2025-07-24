@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:layer_first_task/config/asset/icons_path.dart';
+import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
 import 'package:layer_first_task/config/theme/color_pallet.dart';
 
-class FilterData extends StatelessWidget {
+class FilterData extends StatefulWidget {
   const FilterData({
     super.key,
   });
 
+  @override
+  State<FilterData> createState() => _FilterDataState();
+}
+
+class _FilterDataState extends State<FilterData> {
+   int selectedIndex = 0; // 0: هیچکدام، 1: فیلتر، 2: سفارشات امروز
+
+ 
+ 
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -31,12 +41,18 @@ class FilterData extends StatelessWidget {
             Row(
               children: [
                 InkWell(
+                  onTap: () {
+                     setState(() {
+                      selectedIndex = 1;
+                    });
+                  },
                   child: Container(
                     width: 68,
                     height: 24,
                     decoration: BoxDecoration(
-                      color: Color(0xffE8EBF1),
-                      borderRadius: BorderRadius.circular(10),
+ color: selectedIndex == 1
+                          ? Theme.of(context).colorScheme.primary.withOpacity(0.2)
+                          : const Color(0xffE8EBF1),                      borderRadius: BorderRadius.circular(10),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -44,26 +60,41 @@ class FilterData extends StatelessWidget {
                         Text(
                           'فیلتر   ',
                           style: TextStyle(
-                            color:
-                                Theme.of(context).colorScheme.onSurface,
-                          ),
+                             color: selectedIndex == 1
+                                ? Theme.of(context).colorScheme.primary
+                                : Theme.of(context).colorScheme.onSurface,
+                       ),
                         ),
                         SvgPicture.asset(
                           width: 18,
                           height: 19,
                           IconPath.filter,
+                          colorFilter: ColorFilter.mode(
+                            selectedIndex == 1
+                                ? Theme.of(context).colorScheme.primary
+                                : Theme.of(context).colorScheme.onSurface,
+                            BlendMode.srcIn,
+                          ),
                         ),
                       ],
                     ),
                   ),
                 ),
+                8.0.horizontalSpace,
                 InkWell(
+                    onTap: () {
+                    setState(() {
+                      selectedIndex = 2;
+                    });
+                  },
                   child: Container(
                     width: 118,
                     height: 24,
                     decoration: BoxDecoration(
-                      color: Color(0xffE8EBF1),
-                      borderRadius: BorderRadius.circular(10),
+                      color: selectedIndex == 2
+                          ? Theme.of(context).colorScheme.primary.withOpacity(0.2)
+                          : const Color(0xffE8EBF1),
+                    borderRadius: BorderRadius.circular(10),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -71,14 +102,21 @@ class FilterData extends StatelessWidget {
                         Text(
                           'سفارشات امروز   ',
                           style: TextStyle(
-                            color:
-                                Theme.of(context).colorScheme.onSurface,
-                          ),
+                            color: selectedIndex == 2
+                                ? Theme.of(context).colorScheme.primary
+                                : Theme.of(context).colorScheme.onSurface,
+                         ),
                         ),
                         SvgPicture.asset(
                           width: 18,
                           height: 19,
                           IconPath.calender,
+                            colorFilter: ColorFilter.mode(
+                            selectedIndex == 2
+                                ? Theme.of(context).colorScheme.primary
+                                : Theme.of(context).colorScheme.onSurface,
+                            BlendMode.srcIn,
+                          ),
                         ),
                       ],
                     ),
