@@ -127,7 +127,7 @@ class ProfileScreen extends StatelessWidget {
          
           const CallInformationWidget(),
          
-          80.0.verticalSpace,
+          20.0.verticalSpace,
         ],
       ),
     );
