@@ -1,264 +1,46 @@
-/*import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:layer_first_task/config/asset/icons_path.dart';
-import 'package:layer_first_task/config/theme/text_styles.dart';
+import 'package:flutter/material.dart';
 
-class Scroll2 extends StatelessWidget {
-  const Scroll2({super.key});
+class BottunScrollerScreen extends StatelessWidget {
+  const BottunScrollerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SvgPicture.asset(
-                    IconPath.trash,
-                    width: 24,
-                    height: 24,
-                  ),
-                  SvgPicture.asset(
-                    IconPath.edit,
-                    width: 24,
-                    height: 24,
-                    color: Color(0xff367CFF),
-                  ),
-                ],
-              ),
-              Spacer(),
-              Text(
-                'مهدی علوی فر',
-                style: TextStyle(
-                  fontFamily: "dana",
-                  fontSize: 20,
-                  color: Color(0xff71727A),
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ],
-          ),
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  const Text(
-                    'تاریخ وضعیت : ۴/۵/۱۴۰۴',
-                    style: TextStyle(
-                      fontFamily: "dana",
-                      fontSize: 10,
-                      color: Color(0xff000000),
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                  SvgPicture.asset(
-                    IconPath.calender,
-                    width: 16,
-                    height: 16,
-                  )
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  const Text(
-                    'دسته بندی : دبستان حیدری',
-                    style: TextStyle(
-                      fontFamily: "dana",
-                      fontSize: 10,
-                      color: Color(0xff000000),
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                  SvgPicture.asset(
-                    IconPath.newtag,
-                    width: 16,
-                    height: 16,
-                  )
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  const Text(
-                    'تلفن : ۰۹۳۹۱۵۵۶۸۶۲',
-                    style: TextStyle(
-                      fontFamily: "dana",
-                      fontSize: 10,
-                      color: Color(0xff000000),
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                  SvgPicture.asset(
-                    IconPath.call,
-                    width: 16,
-                    height: 16,
-                  )
-                ],
-              )
-            ],
-          ),
+          // ... بخش اطلاعات کاربر و آیکون‌ها ...
+          // ... بخش کد تحویل ...
+          // جدول کالاها
           Container(
             width: 384,
-            height: 28,
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.secondaryContainer,
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            child: Column(
               children: [
-                Text(
-                  '  کد تحویل',
-                  style: TextStyle(
-                    fontFamily: "dana",
-                    fontSize: 13,
-                    color: Color(0xff000000),
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                Text(
-                  '  ۴۳۰۴۰',
-                  style: TextStyle(
-                    fontFamily: "dana",
-                    fontSize: 13,
-                    color: Color(0xff000000),
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
+                _buildTableHeader(context),
+                ..._buildOrderRows(context),
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              width: 374,
-              height: 113,
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.secondaryContainer,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                          child: Text('قیمت کلa',
-                              style: lightTextTheme.bodySmall)),
-                      Expanded(
-                          child: Text('قیمت واحد',
-                              style: lightTextTheme.bodySmall)),
-                      Expanded(
-                          child:
-                              Text('تعداد', style: lightTextTheme.bodySmall)),
-                      Expanded(
-                          child: Text('نام کالا ',
-                              style: lightTextTheme.bodySmall)),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                          child: Text('۱۱،۲۱۰،۰۰۰',
-                              style: lightTextTheme.bodySmall)),
-                      Expanded(
-                          child: Text('۱۲۰،۰۰۰د',
-                              style: lightTextTheme.bodySmall)),
-                      Expanded(
-                          child: Text('۴۳', style: lightTextTheme.bodySmall)),
-                      Expanded(
-                          child: Text(' روپوش سایز ۳۰ - پسرانه ',
-                              style: lightTextTheme.bodySmall)),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                          child: Text('۱۱،۲۱۰،۰۰۰',
-                              style: lightTextTheme.bodySmall)),
-                      Expanded(
-                          child: Text('۱۲۰،۰۰۰د',
-                              style: lightTextTheme.bodySmall)),
-                      Expanded(
-                          child: Text('۴۳', style: lightTextTheme.bodySmall)),
-                      Expanded(
-                          child: Text(' روپوش سایز ۳۰ - پسرانه ',
-                              style: lightTextTheme.bodySmall)),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                          child: Text('۱۱،۲۱۰،۰۰۰',
-                              style: lightTextTheme.bodySmall)),
-                      Expanded(
-                          child: Text('۱۲۰،۰۰۰د',
-                              style: lightTextTheme.bodySmall)),
-                      Expanded(
-                          child: Text('۴۳', style: lightTextTheme.bodySmall)),
-                      Expanded(
-                          child: Text(' روپوش سایز ۳۰ - پسرانه ',
-                              style: lightTextTheme.bodySmall)),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              width: 374,
-              height: 79,
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.secondaryContainer,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Center(
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('۳۳،۶۳۰،۰۰۰'),
-                        Text('مبلغ کل‌'),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('۰'),
-                        Text('پیش پرداخت '),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('۳۳،۶۳۰،۰۰۰'),
-                        Text('مبلغ قابل پرداخت :  '),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Row(
+          const SizedBox(height: 8),
+          // بخش جمع مبالغ
+          _buildAmountSummary(context),
+          const SizedBox(height: 8),
+          // توضیحات
+          const Row(
             children: [
               Text('توضیحات   :'),
-              Text('تحویل حضوری در مرکز توزیع پوشاک - ۰۱۱'),
+              Expanded(child: Text('تحویل حضوری در مرکز توزیع پوشاک - ۰۱۱')),
             ],
           ),
+          const SizedBox(height: 8),
+          // دکمه
           InkWell(
-            onTap: (){},
+            onTap: () {},
             borderRadius: BorderRadius.circular(12),
             child: Container(
               width: 382,
@@ -271,15 +53,13 @@ class Scroll2 extends StatelessWidget {
                 ]),
               ),
               alignment: Alignment.center,
-              child: Center(
-                child: Text(
-                  'تحویل گرفت',
-                  style: TextStyle(
-                    fontFamily: 'dana',
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onPrimary,
-                  ),
+              child: Text(
+                'تحویل گرفت',
+                style: TextStyle(
+                  fontFamily: 'dana',
+                  fontSize: 12.0,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.onPrimary,
                 ),
               ),
             ),
@@ -288,5 +68,75 @@ class Scroll2 extends StatelessWidget {
       ),
     );
   }
+
+  
+
+
+  Widget _buildTableHeader(BuildContext context) {
+    final textStyle = Theme.of(context).textTheme.bodySmall;
+    return Row(
+      children: [
+        Expanded(child: Text('قیمت کل', style: textStyle)),
+        Expanded(child: Text('قیمت واحد', style: textStyle)),
+        Expanded(child: Text('تعداد', style: textStyle)),
+        Expanded(child: Text('نام کالا', style: textStyle)),
+      ],
+    );
+  }
+
+  List<Widget> _buildOrderRows(BuildContext context) {
+    final textStyle = Theme.of(context).textTheme.bodySmall;
+    List<List<String>> items = [
+      ['۱۱،۲۱۰،۰۰۰', '۱۲۰،۰۰۰د', '۴۳', 'روپوش سایز ۳۰ - پسرانه'],
+      ['۱۱،۲۱۰،۰۰۰', '۱۲۰،۰۰۰د', '۴۳', 'روپوش سایز ۳۰ - پسرانه'],
+      ['۱۱،۲۱۰،۰۰۰', '۱۲۰،۰۰۰د', '۴۳', 'روپوش سایز ۳۰ - پسرانه'],
+    ];
+    return items.map((item) {
+      return Row(
+        children: [
+          Expanded(child: Text(item[0], style: textStyle)),
+          Expanded(child: Text(item[1], style: textStyle)),
+          Expanded(child: Text(item[2], style: textStyle)),
+          Expanded(child: Text(item[3], style: textStyle)),
+        ],
+      );
+    }).toList();
+  }
+
+  Widget _buildAmountSummary(BuildContext context) {
+    return Container(
+      width: 374,
+      height: 79,
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.secondaryContainer,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: const Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('۳۳،۶۳۰،۰۰۰'),
+              Text('مبلغ کل‌'),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('۰'),
+              Text('پیش پرداخت '),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('۳۳،۶۳۰،۰۰۰'),
+              Text('مبلغ قابل پرداخت :  '),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
 }
-*/

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
+import 'package:layer_first_task/feature/presentation/orders/screens/bottunscroler.dart';
 import 'package:layer_first_task/feature/presentation/orders/widgets/card.dart';
 import 'package:layer_first_task/feature/presentation/orders/widgets/filter_data_widget.dart';
 import 'package:layer_first_task/feature/presentation/orders/widgets/header.dart';
@@ -13,6 +14,31 @@ class OrdersScreen extends StatefulWidget {
 }
 
 class _OrdersScreenState extends State<OrdersScreen> {
+  void _showCustomBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) {
+        return DraggableScrollableSheet(
+          initialChildSize: 0.8, // 80% از ارتفاع صفحه
+          minChildSize: 0.5,
+          maxChildSize: 0.95,
+          expand: false,
+          builder: (context, scrollController) {
+            return Container(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+              ),
+              child: const BottunScrollerScreen(),
+            );
+          },
+        );
+      },
+    );
+  }
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +68,12 @@ class _OrdersScreenState extends State<OrdersScreen> {
                 OrderItem(title: 'روپوش', desc: '۲۳ مدیوم', value: '۳'),
                 OrderItem(title: 'شلوار', desc: '۲۳ مدیوم', value: '۲۰۰۰۰۰۰'),
               ],
-            )
+            ),
+             const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: _showCustomBottomSheet,
+              child: const Text('نمایش جزئیات سفارش'),
+            ),
           ],
         ),
       ),
