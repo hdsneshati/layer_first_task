@@ -18,14 +18,14 @@ class TextFieldWidget extends StatelessWidget {
                    Icons.person_outlined,
                    color: Theme.of(context)
                        .colorScheme
-                       .onBackground
+                       .onSurface
                        .withOpacity(0.5),
                  ), // آیکون سمت راست               
                  hintText: "مثلا09024365997",
                  hintStyle: TextStyle(
                    color: Theme.of(context)
                        .colorScheme
-                       .onBackground
+                       .onSurface
                        .withOpacity(0.5), // کمرنگ‌تر
                    fontSize: 14, // اختیاری
                    

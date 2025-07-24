@@ -48,23 +48,24 @@ class _OrdersScreenState extends State<OrdersScreen> {
       padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            100.0.verticalSpace,
+            85.0.verticalSpace,
             const HeaderOrders(),
-            81.0.verticalSpace,
+            60.0.verticalSpace,
             const SearchHeader(),
+         8.0.verticalSpace,
            const Divider(
               color: Color(0xff003A02), // رنگ خط
               thickness: 1, // ضخامت خط
-              height: 20, // فاصله عمودی اطراف خط
+              height: 10, // فاصله عمودی اطراف خط
               indent: 8, // فاصله از چپ
               endIndent: 8, // فاصله از راست
             ),
-            10.0.verticalSpace,
+            5.0.verticalSpace,
             const FilterData(),
             CardOrderScreen(
               customerName: 'هاشم بیگ زاده',
               status: 'سفارش هنوز اماده نشده',
-              payment: 'مبلغ پرداختی',
+              payment: '49000 ',
               items: [
                 OrderItem(title: 'روپوش', desc: '۲۳ مدیوم', value: '۳'),
                 OrderItem(title: 'شلوار', desc: '۲۳ مدیوم', value: '۲۰۰۰۰۰۰'),

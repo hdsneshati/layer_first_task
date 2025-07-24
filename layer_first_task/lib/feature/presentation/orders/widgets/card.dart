@@ -28,7 +28,7 @@ class CardOrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 31.0,vertical: 10.0),
+      padding: const EdgeInsets.symmetric(horizontal: 31.0, vertical: 10.0),
       child: Container(
         width: 366,
         height: 143,
@@ -43,7 +43,8 @@ class CardOrderScreen extends StatelessWidget {
               children: [
                 // بخش آیتم‌ها
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 11.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 10.0, vertical: 11.0),
                   child: Container(
                     width: 212,
                     height: 90,
@@ -54,82 +55,77 @@ class CardOrderScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         ...items.map((item) => Column(
-                          children: [
-                            Row(
                               children: [
-                                Text(
-                                  item.value,
-                                  style: TextStyle(
-                                    fontFamily: "dana",
-                                    fontSize: 7,
-                                    color: ColorPallet.lightColorScheme.onSurface,
-                                    fontWeight: FontWeight.w400,
-                                  ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      item.value,
+                                      style: TextStyle(
+                                        fontFamily: "dana",
+                                        fontSize: 7,
+                                        color: ColorPallet
+                                            .lightColorScheme.onSurface,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    const Spacer(),
+                                    Text(
+                                      item.desc,
+                                      style: const TextStyle(
+                                        fontFamily: "dana",
+                                        fontSize: 7,
+                                        color: Color(0xff000000),
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 40),
+                                    Text(
+                                      item.title,
+                                      style: TextStyle(
+                                        fontFamily: "dana",
+                                        fontSize: 7,
+                                        color: ColorPallet
+                                            .lightColorScheme.onSurface,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                
-                               const Spacer(),
-                                Text(
-                                  item.desc,
-                                  style:const TextStyle(
-                                    fontFamily: "dana",
-                                    fontSize: 7,
-                                    color: Color(0xff000000),
-                                    fontWeight: FontWeight.w400,
-                                  ),
+                                8.0.verticalSpace,
+                                const Divider(
+                                  color: Color(0xffADADAD),
+                                  thickness: 1,
+                                  height: 5,
+                                  indent: 0,
+                                  endIndent: 0,
                                 ),
-                                const SizedBox(width: 40),
-                                Text(
-                                  item.title,
-                                  style: TextStyle(
-                                    fontFamily: "dana",
-                                    fontSize: 7,
-                                    color: ColorPallet.lightColorScheme.onSurface,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
+                                8.0.verticalSpace
                               ],
-                            ),
-                           
-                           8.0.verticalSpace,
-
-                            const Divider(
-                              color: Color(0xffADADAD),
-                              thickness: 1,
-                              height: 5,
-                              indent: 0,
-                              endIndent: 0,
-                            ),
-                            8.0.verticalSpace
-                          ],
-                        )
-                        
-                        ),
-                   
-                   
-                     const   Center(
+                            )),
+                        const Center(
                           child: Row(
                             children: [
-                              Text('4',
-                               style: TextStyle(
-                                      fontFamily: "dana",
-                                      fontSize: 7,
-                                      color: Color(0xff000000),
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                    ),
-                              Text('محصول دیگر',
-                               style: TextStyle(
-                                      fontFamily: "dana",
-                                      fontSize: 7,
-                                      color: Color(0xff000000),
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                    ),
-                          
+                              Text(
+                                '4',
+                                style: TextStyle(
+                                  fontFamily: "dana",
+                                  fontSize: 7,
+                                  color: Color(0xff000000),
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              Text(
+                                'محصول دیگر',
+                                style: TextStyle(
+                                  fontFamily: "dana",
+                                  fontSize: 7,
+                                  color: Color(0xff000000),
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
                             ],
                           ),
                         ),
-
                       ],
                     ),
                   ),
@@ -140,13 +136,15 @@ class CardOrderScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(customerName,
-                       style: TextStyle(
-                                    fontFamily: "dana",
-                                    fontSize: 13,
-                                    color: ColorPallet.lightColorScheme.onSurface,
-                                    fontWeight: FontWeight.w400,
-                                  ),),
+                      Text(
+                        customerName,
+                        style: TextStyle(
+                          fontFamily: "dana",
+                          fontSize: 13,
+                          color: ColorPallet.lightColorScheme.onSurface,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
                       const SizedBox(height: 8),
                       Row(
                         children: [
@@ -168,22 +166,67 @@ class CardOrderScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            const Divider(
+              color: Color(0xffC5C6CC),
+              thickness: 1,
+              height: 5,
+              indent: 0,
+              endIndent: 0,
+            ),
+            7.0.verticalSpace,
+            // بخش وضعیت و مبلغ پرداختی
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
-
-                    Text(status),
-                     SvgPicture.asset(
-                            IconPath.ellipsered,
-                            height: 24,
-                            width: 24,
-                          ),
+                    Text(
+                      status,
+                      style: const TextStyle(
+                        fontFamily: "dana",
+                        fontSize: 7,
+                        color: Color(0xffE73838),
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    SvgPicture.asset(
+                      IconPath.ellipsered,
+                      height: 8,
+                      width: 8,
+                    ),
                   ],
                 ),
-                Text(payment),
+                Row(
+                  children: [
+                    const Text(
+                      'تومان',
+                      style: TextStyle(
+                        fontFamily: "dana",
+                        fontSize: 5,
+                        color: Color(0xff000000),
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    Text(
+                      payment,
+                      style: const TextStyle(
+                        fontFamily: "dana",
+                        fontSize: 11,
+                        color: Color(0xff525252),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const Text(
+                      'مبلغ پرداختی ',
+                      style: TextStyle(
+                        fontFamily: "dana",
+                        fontSize: 11,
+                        color: Color(0xff2F3036),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ],

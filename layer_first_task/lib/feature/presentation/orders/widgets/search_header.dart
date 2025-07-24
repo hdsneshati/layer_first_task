@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:layer_first_task/config/asset/icons_path.dart';
+import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
 
 class SearchHeader extends StatefulWidget {
 
@@ -11,13 +12,13 @@ class SearchHeader extends StatefulWidget {
 }
 
 class _SearchHeaderState extends State<SearchHeader> {
-  int selectedIndex = 0;
+  int selectedIndex = 3;
 
   
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -25,7 +26,9 @@ class _SearchHeaderState extends State<SearchHeader> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               buttonheader(context,'جاری',0),
+              5.0.horizontalSpace,
               buttonheader(context,'اماده',1),
+              5.0.horizontalSpace,
               buttonheader(context,'تحویلی',2),
             ],
           ),
@@ -79,10 +82,14 @@ class _SearchHeaderState extends State<SearchHeader> {
           border: Border.all(
             color: selectedIndex == index
                 ? Theme.of(context).colorScheme.primary
-                : Theme.of(context).colorScheme.secondary,
+                :const Color(0xffE8EBF1),
+                
             width: 1,
           ),
-          color: Theme.of(context).colorScheme.secondaryContainer,
+          color: selectedIndex == index
+                ? Theme.of(context).colorScheme.primaryContainer
+                :Theme.of(context).colorScheme.secondaryContainer,
+              
           borderRadius: BorderRadius.circular(10),
         ),
         child: Align(
