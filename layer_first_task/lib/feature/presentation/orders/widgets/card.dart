@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:layer_first_task/config/asset/icons_path.dart';
+import 'package:layer_first_task/config/asset/svg_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
 import 'package:layer_first_task/config/theme/color_pallet.dart';
 
@@ -30,7 +31,7 @@ class CardOrderScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 31.0, vertical: 10.0),
       child: Container(
-        width: 366,
+        width: 420,
         height: 143,
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.secondaryContainer,
@@ -38,82 +39,77 @@ class CardOrderScreen extends StatelessWidget {
         ),
         child: Column(
           children: [
+            5.0.verticalSpace,
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+               
                 // بخش آیتم‌ها
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 10.0, vertical: 11.0),
+                  padding: const EdgeInsets.only(left: 5.0,right: 5.0,top: 20.0),
                   child: Container(
-                    width: 212,
+                    width: 185,
                     height: 90,
                     decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.secondaryContainer,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Column(
-                      children: [
-                        ...items.map((item) => Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(
-                                      item.value,
-                                      style: TextStyle(
-                                        fontFamily: "dana",
-                                        fontSize: 7,
-                                        color: ColorPallet
-                                            .lightColorScheme.onSurface,
-                                        fontWeight: FontWeight.w400,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Column(
+                        children: [
+                          ...items.map((item) => Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text(
+                                        item.value,
+                                        style: TextStyle(
+                                          fontFamily: "dana",
+                                          fontSize: 7,
+                                          color: ColorPallet
+                                              .lightColorScheme.onSurface,
+                                          fontWeight: FontWeight.w400,
+                                        ),
                                       ),
-                                    ),
-                                    const Spacer(),
-                                    Text(
-                                      item.desc,
-                                      style: const TextStyle(
-                                        fontFamily: "dana",
-                                        fontSize: 7,
-                                        color: Color(0xff000000),
-                                        fontWeight: FontWeight.w400,
+                                      const Spacer(),
+                                      Text(
+                                        item.desc,
+                                        style: const TextStyle(
+                                          fontFamily: "dana",
+                                          fontSize: 7,
+                                          color: Color(0xff000000),
+                                          fontWeight: FontWeight.w400,
+                                        ),
                                       ),
-                                    ),
-                                    const SizedBox(width: 40),
-                                    Text(
-                                      item.title,
-                                      style: TextStyle(
-                                        fontFamily: "dana",
-                                        fontSize: 7,
-                                        color: ColorPallet
-                                            .lightColorScheme.onSurface,
-                                        fontWeight: FontWeight.w400,
+                                      20.0.horizontalSpace,
+                                      Text(
+                                        item.title,
+                                        style: TextStyle(
+                                          fontFamily: "dana",
+                                          fontSize: 7,
+                                          color: ColorPallet
+                                              .lightColorScheme.onSurface,
+                                          fontWeight: FontWeight.w400,
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                8.0.verticalSpace,
-                                const Divider(
-                                  color: Color(0xffADADAD),
-                                  thickness: 1,
-                                  height: 5,
-                                  indent: 0,
-                                  endIndent: 0,
-                                ),
-                                8.0.verticalSpace
-                              ],
-                            )),
-                        const Center(
-                          child: Row(
+                                    ],
+                                  ),
+                                  8.0.verticalSpace,
+                                  const Divider(
+                                    color: Color(0xffADADAD),
+                                    thickness: 1,
+                                    height: 5,
+                                    indent: 0,
+                                    endIndent: 0,
+                                  ),
+                                  8.0.verticalSpace
+                                ],
+                              )),
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
-                                '4',
-                                style: TextStyle(
-                                  fontFamily: "dana",
-                                  fontSize: 7,
-                                  color: Color(0xff000000),
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
+                             
                               Text(
                                 'محصول دیگر',
                                 style: TextStyle(
@@ -123,41 +119,78 @@ class CardOrderScreen extends StatelessWidget {
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
+                               Text(
+                                '4',
+                                style: TextStyle(
+                                  fontFamily: "dana",
+                                  fontSize: 7,
+                                  color: Color(0xff000000),
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
                             ],
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
-                const SizedBox(width: 12),
+                const SizedBox(width: 5),
                 // بخش اطلاعات مشتری
                 Flexible(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        customerName,
-                        style: TextStyle(
-                          fontFamily: "dana",
-                          fontSize: 13,
-                          color: ColorPallet.lightColorScheme.onSurface,
-                          fontWeight: FontWeight.w400,
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            customerName,
+                            style:const TextStyle(
+                              fontFamily: "dana",
+                              fontSize: 13,
+                              color: Color(0xff525252),
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
                       ),
                       const SizedBox(height: 8),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
+                         const Text(
+                            '۱۰/۱۰/۱۴۰۲:تاریخ',
+                            style: TextStyle(
+                              fontFamily: "dana",
+                              fontSize: 10,
+                              color: Color(0xff525252),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                           SvgPicture.asset(
-                            IconPath.calender,
+                            SvgPath.calendar,
                             height: 24,
                             width: 24,
+                             colorFilter:const ColorFilter.mode(
+                               Color(0xff525252),
+                              BlendMode.srcIn,
+                            ),
                           ),
-                          const SizedBox(width: 8),
+                        ],
+                      ),
+                      8.0.verticalSpace,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
                           SvgPicture.asset(
                             IconPath.paperclip,
                             height: 24,
                             width: 24,
+                            colorFilter:const ColorFilter.mode(
+                               Color(0xff525252),
+                              BlendMode.srcIn,
+                            ),
                           ),
                         ],
                       ),
@@ -189,6 +222,7 @@ class CardOrderScreen extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
+                    2.0.horizontalSpace,
                     SvgPicture.asset(
                       IconPath.ellipsered,
                       height: 8,

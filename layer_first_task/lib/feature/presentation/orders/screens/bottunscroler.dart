@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:layer_first_task/config/asset/icons_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
-import 'package:layer_first_task/config/theme/color_pallet.dart';
 
 class BottunScrollerScreen extends StatelessWidget {
   const BottunScrollerScreen({super.key});
