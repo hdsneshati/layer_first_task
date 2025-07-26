@@ -47,9 +47,14 @@ class _FilterDataState extends State<FilterData> {
                 child: Container(
                   height: 24,
                   decoration: BoxDecoration(
-                    color: selectedIndex == 2
-                        ? Theme.of(context).colorScheme.primary.withOpacity(0.2)
+                    border: Border.all(
+                      color: selectedIndex == 2
+                        ? Theme.of(context).colorScheme.secondary.withOpacity(0.4)
                         : const Color(0xffE8EBF1),
+                    ),
+                     color: selectedIndex == 2
+                        ? Theme.of(context).colorScheme.secondary.withOpacity(0.2)
+                        :Theme.of(context).colorScheme.secondary.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(
@@ -57,8 +62,7 @@ class _FilterDataState extends State<FilterData> {
                     children: [
                       if (selectedIndex == 2)
                         Positioned(
-                          top: 0,
-                          left: 0,
+                        
                           child: GestureDetector(
                             onTap: () {
                               setState(() {
@@ -71,10 +75,14 @@ class _FilterDataState extends State<FilterData> {
                                 height: 10,
                                 IconPath.ellips12,
                               ),
-                              SvgPicture.asset(
-                                width: 10,
-                                height: 10,
-                                IconPath.cancel,
+                              Positioned(
+                                top: 3,
+                                left: 3,
+                                child: SvgPicture.asset(
+                                  width: 4,
+                                  height: 4,
+                                  IconPath.cancel,
+                                ),
                               ),
                             ]),
                           ),
@@ -83,8 +91,9 @@ class _FilterDataState extends State<FilterData> {
                         'سفارشات امروز   ',
                         style: TextStyle(
                           color: selectedIndex == 2
-                              ? Theme.of(context).colorScheme.primary
-                              : Theme.of(context).colorScheme.onSurface,
+                             
+                              ? Theme.of(context).colorScheme.onSurface
+                               : Colors.grey,
                         ),
                       ),
                       SvgPicture.asset(
@@ -92,9 +101,8 @@ class _FilterDataState extends State<FilterData> {
                         height: 19,
                         SvgPath.calendar,
                         colorFilter: ColorFilter.mode(
-                          selectedIndex == 2
-                              ? Theme.of(context).colorScheme.primary
-                              : Theme.of(context).colorScheme.onSurface,
+                         
+                               Theme.of(context).colorScheme.onSurface,
                           BlendMode.srcIn,
                         ),
                       ),
@@ -112,9 +120,12 @@ class _FilterDataState extends State<FilterData> {
                 child: Container(
                   height: 24,
                   decoration: BoxDecoration(
-                    color: selectedIndex == 1
-                        ? Theme.of(context).colorScheme.primary.withOpacity(0.2)
+                    border: Border.all(
+                      color: selectedIndex == 2
+                        ? Theme.of(context).colorScheme.secondary.withOpacity(0.2)
                         : const Color(0xffE8EBF1),
+                    ),
+                    
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(
@@ -137,8 +148,8 @@ class _FilterDataState extends State<FilterData> {
                                 IconPath.ellips12,
                               ),
                               SvgPicture.asset(
-                                width: 10,
-                                height: 10,
+                                width: 4,
+                                height: 4,
                                 IconPath.cancel,
                               ),
                             ]),
@@ -147,9 +158,10 @@ class _FilterDataState extends State<FilterData> {
                       Text(
                         'فیلتر   ',
                         style: TextStyle(
-                          color: selectedIndex == 1
-                              ? Theme.of(context).colorScheme.primary
-                              : Theme.of(context).colorScheme.onSurface,
+                           color: selectedIndex == 2
+                             
+                              ? Theme.of(context).colorScheme.onSurface
+                               : Colors.grey,
                         ),
                       ),
                       SvgPicture.asset(

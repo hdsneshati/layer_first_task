@@ -9,14 +9,17 @@ class BottunScrollerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(vertical: 39.0, horizontal: 26.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           // ... بخش اطلاعات کاربر و آیکون‌ها ...
           // ... بخش کد تحویل ...
           // جدول کالاها
-           const  HeaderNameOrder(),
+          const HeaderNameOrder(),
+          _buildInformation(context),
+
+      _buildcode(context),
           Container(
             width: 384,
             decoration: BoxDecoration(
@@ -25,7 +28,6 @@ class BottunScrollerScreen extends StatelessWidget {
             ),
             child: Column(
               children: [
-             
                 _buildTableHeader(context),
                 ..._buildOrderRows(context),
               ],
@@ -36,15 +38,14 @@ class BottunScrollerScreen extends StatelessWidget {
           _buildAmountSummary(context),
           const SizedBox(height: 8),
           // توضیحات
-          const Row(
+           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-             
-              Text('تحویل حضوری در مرکز توزیع پوشاک - ۰۱۱'),
-            Text('توضیحات   :'),
+              Text('تحویل حضوری در مرکز توزیع پوشاک - ۰۱۱',style:  Theme.of(context).textTheme.bodySmall),
+              Text('توضیحات   :',style : Theme.of(context).textTheme.bodySmall),
             ],
           ),
-         const Spacer(),
+          const Spacer(),
           // دکمه
           InkWell(
             onTap: () {},
@@ -71,58 +72,65 @@ class BottunScrollerScreen extends StatelessWidget {
               ),
             ),
           ),
-          10.0.verticalSpace,
+          
         ],
       ),
     );
   }
 
-  
-
-
   Widget _buildTableHeader(BuildContext context) {
     final textStyle = Theme.of(context).textTheme.bodySmall;
-    return Row(
+    return Column(
       children: [
-        Expanded(child: Text('قیمت کل', style: textStyle)),
-        Expanded(child: Text('قیمت واحد', style: textStyle)),
-        Expanded(child: Text('تعداد', style: textStyle)),
-        Expanded(child: Text('نام کالا', style: textStyle)),
+        Row(
+          children: [
+            Expanded(child: Text('قیمت کل', style: textStyle)),
+            Expanded(child: Text('قیمت واحد', style: textStyle)),
+            Expanded(child: Text('تعداد', style: textStyle)),
+            Expanded(child: Text('نام کالا', style: textStyle)),
+          ],
+        ),
+        const Divider(
+        color: Color.fromARGB(255, 155, 153, 153), // رنگ دلخواه
+        thickness: 1, // ضخامت خط
+        height: 16, // فاصله عمودی
+      )
       ],
     );
   }
 
- List<Widget> _buildOrderRows(BuildContext context) {
-  final textStyle = Theme.of(context).textTheme.bodySmall;
-  List<List<String>> items = [
-    ['۱۱،۲۱۰،۰۰۰', '۱۲۰،۰۰۰د', '۴۳', 'روپوش سایز ۳۰ - پسرانه'],
-    ['۱۱،۲۱۰،۰۰۰', '۱۲۰،۰۰۰د', '۴۳', 'روپوش سایز ۳۰ - پسرانه'],
-    ['۱۱،۲۱۰،۰۰۰', '۱۲۰،۰۰۰د', '۴۳', 'روپوش سایز ۳۰ - پسرانه'],
-  ];
-  List<Widget> rows = [];
-  for (var item in items) {
-    rows.add(
-      Row(
-        children: [
-          Expanded(child: Text(item[0], style: textStyle)),
-          Expanded(child: Text(item[1], style: textStyle)),
-          Expanded(child: Text(item[2], style: textStyle)),
-          Expanded(child: Text(item[3], style: textStyle)),
-        ],
-      ),
-    );
-    rows.add(const Divider(
-       color: Colors.grey, // رنگ دلخواه
-  thickness: 1,      // ضخامت خط
-  height: 16,       // فاصله عمودی
-    ));
+  List<Widget> _buildOrderRows(BuildContext context) {
+    final textStyle = Theme.of(context).textTheme.bodySmall;
+    List<List<String>> items = [
+      ['۱۱،۲۱۰،۰۰۰', '۱۲۰،۰۰۰د', '۴۳', 'روپوش سایز ۳۰ - '],
+      ['۱۱،۲۱۰،۰۰۰', '۱۲۰،۰۰۰د', '۴۳', 'روپوش سایز ۳۰ - '],
+      ['۱۱،۲۱۰،۰۰۰', '۱۲۰،۰۰۰د', '۴۳', 'روپوش سایز ۳۰ - '],
+    ];
+    List<Widget> rows = [];
+    for (var item in items) {
+      rows.add(
+        Row(
+          children: [
+            Expanded(child: Text(item[0], style: textStyle)),
+            Expanded(child: Text(item[1], style: textStyle)),
+            Expanded(child: Text(item[2], style: textStyle)),
+            Expanded(child: Text(item[3], style: textStyle)),
+          ],
+        ),
+      );
+      rows.add(const Divider(
+        color: Color.fromARGB(255, 205, 202, 202), // رنگ دلخواه
+        thickness: 1, // ضخامت خط
+        height: 16, // فاصله عمودی
+      ));
+    }
+    return rows;
   }
-  return rows;
-}
+
   Widget _buildAmountSummary(BuildContext context) {
     return Container(
       width: 374,
-      height: 79,
+     
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.secondaryContainer,
         borderRadius: BorderRadius.circular(10),
@@ -144,8 +152,13 @@ class BottunScrollerScreen extends StatelessWidget {
               Text('پیش پرداخت '),
             ],
           ),
+          Divider(
+             color: Colors.grey, // رنگ دلخواه
+        thickness: 1, // ضخامت خط
+        height: 16, // فاصله عمودی
+          ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('۳۳،۶۳۰،۰۰۰'),
               Text('مبلغ قابل پرداخت :  '),
@@ -157,6 +170,109 @@ class BottunScrollerScreen extends StatelessWidget {
   }
 }
 
+Widget _buildInformation(BuildContext context) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+        const Text(
+          'تاریخ وضعیت : ۴/۵/۱۴۰۴  ',
+          style: TextStyle(
+            fontFamily: "dana",
+            fontSize: 10,
+            color: Color(0xff000000),
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        SvgPicture.asset(
+          IconPath.calender,
+          height: 16,
+          width: 16,
+          colorFilter: const ColorFilter.mode(
+            Color(0xff000000),
+            BlendMode.srcIn,
+          ),
+        ),
+      ]),
+    5.0.verticalSpace,
+      Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+        const Text(
+          'دسته بندی : دبستان حیدری ',
+          style: TextStyle(
+            fontFamily: "dana",
+            fontSize: 10,
+            color: Color(0xff000000),
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        SvgPicture.asset(
+          IconPath.tag,
+          height: 16,
+          width: 16,
+          colorFilter: const ColorFilter.mode(
+            Color(0xff000000),
+            BlendMode.srcIn,
+          ),
+        ),
+      ]),
+     5.0.verticalSpace,
+      Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+        const Text(
+          '    تلفن : ۰۹۳۹۱۵۵۶۸۶۲',
+          style: TextStyle(
+            fontFamily: "dana",
+            fontSize: 10,
+            color: Color(0xff000000),
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        SvgPicture.asset(
+          IconPath.call,
+          height: 16,
+          width: 16,
+          colorFilter: const ColorFilter.mode(
+            Color(0xff000000),
+            BlendMode.srcIn,
+          ),
+        ),
+      ]),
+    ],
+  );
+}
+
+Widget _buildcode(BuildContext context){
+  return   Padding(
+              padding: const EdgeInsets.symmetric(vertical: 25.0),
+              child: Container(
+              width: 384,
+              height: 28,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.secondaryContainer,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child:const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                   Text('۴۳۰۴۰ ',
+               style: TextStyle(
+                  fontFamily: "dana",
+                  fontSize: 13,
+                  color: Color(0xff000000),
+                  fontWeight: FontWeight.w400,
+                ),),
+              Text('کد تحویل',
+               style: TextStyle(
+                  fontFamily: "dana",
+                  fontSize: 13,
+                  color: Color(0xff000000),
+                  fontWeight: FontWeight.w400,
+                ),
+                )
+                ],
+              )),
+            );
+}
+
 class HeaderNameOrder extends StatelessWidget {
   const HeaderNameOrder({
     super.key,
@@ -164,9 +280,10 @@ class HeaderNameOrder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      
-      children: [
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 30.0),
+      child: Row(
+        children: [
           Row(
             children: [
               SvgPicture.asset(
@@ -182,15 +299,18 @@ class HeaderNameOrder extends StatelessWidget {
               ),
             ],
           ),
-        const Spacer(),
-     const    Text('مهدی علوی فر',
-           style: TextStyle(
+          const Spacer(),
+          const Text(
+            'مهدی علوی فر',
+            style: TextStyle(
               fontFamily: "dana",
               fontSize: 20,
               color: Color(0xff71727A),
               fontWeight: FontWeight.w500,
-            ),),
-      ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
