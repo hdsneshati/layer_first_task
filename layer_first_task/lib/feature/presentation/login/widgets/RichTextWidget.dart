@@ -15,19 +15,19 @@ class RichTextWidget extends StatelessWidget {
      fontFamily: 'dana',
      fontSize: 12.0,
      fontWeight: FontWeight.w400,
-      color: Theme.of(context).colorScheme.onSurface,
+      color: Theme.of(context).colorScheme.surfaceBright,
       ),),
           TextSpan(text: 'قوانین و مقررات حریم خصوصی ', style: TextStyle(
      fontFamily: 'dana',
      fontSize: 12.0,
      fontWeight: FontWeight.w400,
-      color: Theme.of(context).colorScheme.primary,
+      color: Theme.of(context).colorScheme.surfaceBright,
       ),),
           TextSpan(text: ' الگو را میپذیرید ',  style: TextStyle(
      fontFamily: 'dana',
      fontSize: 12.0,
      fontWeight: FontWeight.w400,
-      color: Theme.of(context).colorScheme.onSurface,
+      color: Theme.of(context).colorScheme.surfaceBright,
       ),),
          
               ],

@@ -18,7 +18,7 @@ class PrimaryButton extends StatelessWidget {
      borderRadius: BorderRadius.circular(12),
      
      child: Container(
-       width: 382, 
+       width: 300, 
        height: 48, 
        
        decoration: BoxDecoration(

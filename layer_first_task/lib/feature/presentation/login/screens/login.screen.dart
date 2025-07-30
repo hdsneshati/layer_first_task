@@ -44,19 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
               color: Theme.of(context).colorScheme.onSurface,
             )),
             92.0.verticalSpace,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [              
-              Text(StringConsts.loginUserNumber
-            ,style: TextStyle(
-              fontFamily: 'dana',
-              fontSize: 12.0,
-              fontWeight: FontWeight.bold,
-              color: Theme.of(context).colorScheme.onSurface,
-                  )),
-                  20.0.horizontalSpace,
-                  ]
-            ),
+           
           const   TextFieldWidget(),
            const    Spacer(),
              PrimaryButton( onTap: () {    
