@@ -15,7 +15,7 @@ class OrdersDashboard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(1),
                border: Border.all(
-                  color:const Color(0xffEDEDED),
+                  color:const Color.fromARGB(255, 239, 230, 230),
                   width: 1,
                 ),
               ),

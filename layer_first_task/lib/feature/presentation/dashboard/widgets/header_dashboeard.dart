@@ -13,9 +13,9 @@ class HeaderDashboeard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 26),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-           Row(
+         /*  Row(
          children: [
            SvgPicture.asset(
            IconPath.notofication,
@@ -29,29 +29,33 @@ class HeaderDashboeard extends StatelessWidget {
                 height: 24,
               ),
          ],
-       ),
+       ),*/
           Row(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
                Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
-                'فاطمه نیک خواه',
+                '  حدیث نشاطی',
                 style: TextStyle(
                   fontFamily: "dana",
-                  fontSize: 12,
-                  color: ColorPallet.lightColorScheme.onSurface,
+                  fontSize: 15,
+                  color: ColorPallet.lightColorScheme.surfaceBright,
                   fontWeight: FontWeight.w800,
                 ),
               ),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: Text('مدیر ',
-                 style: TextStyle(
-                    fontFamily: "dana",
-                    fontSize: 12,
-                    color: ColorPallet.lightColorScheme.surfaceBright,
-                    fontWeight: FontWeight.w800,
-                  ),),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text('                  مالک ',
+                   style: TextStyle(
+                      fontFamily: "dana",
+                      fontSize: 12,
+                      color: ColorPallet.lightColorScheme.surfaceBright,
+                      fontWeight: FontWeight.w800,
+                    ),),
+                ],
               ),
             ],
           ),

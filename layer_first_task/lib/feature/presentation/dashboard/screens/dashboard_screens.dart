@@ -15,14 +15,15 @@ class DashboardScreen extends StatelessWidget {
           70.0.verticalSpace,
          const HeaderDashboeard(),
          const  Divider(
-            color: Colors.grey, // رنگ خط
+            color: Color.fromARGB(255, 217, 214, 214), // رنگ خط
             thickness: 1, // ضخامت خط
             height: 20, // فاصله عمودی اطراف خط
             indent: 16, // فاصله از چپ
             endIndent: 16, // فاصله از راست
           ),
+          15.0.verticalSpace,
          const   OrdersDashboard(),
-          20.0.verticalSpace,
+          60.0.verticalSpace,
          const  ButtonsDashboard(),
         ],
       ),

@@ -8,17 +8,26 @@ class ButtonsDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.all(26.0),
+      padding: EdgeInsets.all(50.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          ButtonD(
-            label: '  گزارش گیری ',
-            iconPath: IconPath.chartbutton,
+           ButtonD(
+            label: '  آمار گیری ',
+            iconPath: IconPath.chart,
             color1: Color(0xff4390E8),
             color2: Color(0xff9AC2FF),
             w: 35,
             h: 35,
+          ),
+          
+           ButtonD(
+            label: '   دسته بندی ها',
+            iconPath: IconPath.tag,
+            color1: Color(0xffE8A043),
+            color2: Color(0xffFEEA99),
+            w: 30,
+            h: 30,
           ),
           ButtonD(
             label: ' محصولات',
@@ -28,14 +37,8 @@ class ButtonsDashboard extends StatelessWidget {
             w: 36,
             h: 24,
           ),
-          ButtonD(
-            label: '  گروه مشتریان',
-            iconPath: IconPath.tag,
-            color1: Color(0xffE8A043),
-            color2: Color(0xffFEEA99),
-            w: 30,
-            h: 30,
-          ),
+         
+         
         ],
       ),
     );
@@ -68,6 +71,8 @@ class ButtonD extends StatelessWidget {
           height: 48,
           decoration: BoxDecoration(
             gradient: LinearGradient(
+               begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
               colors: [color1, color2], // رنگ پس‌زمینه
             ),
             borderRadius: BorderRadius.circular(8),
@@ -87,10 +92,10 @@ class ButtonD extends StatelessWidget {
         Text(
           label,
           style: TextStyle(
-            color: Theme.of(context).colorScheme.onSurface,
-            fontSize: 10,
+            color: Colors.grey,
+            fontSize: 13,
             fontFamily: 'dana',
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ]),
