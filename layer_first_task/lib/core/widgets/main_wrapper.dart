@@ -18,16 +18,16 @@ class _MainWrapperState extends State<MainWrapper> {
   int index = 0;
 
   List<Widget> screens = [
-    const DashboardScreen(),
-    const OrdersScreen(),
+    const ProfileScreen(),   
     const AnalyticsScreen(),
-    const ProfileScreen(),
+    const OrdersScreen(),
+    const DashboardScreen(),
   ];
   List<String> appBarTitles = [
-    "داشبورد",
-    "سفارشات",
+     "مدیریت",   
     "امارگیری",
-    "مدیریت",
+   "سفارشات",
+    "داشبورد",
   ];
 
    @override
@@ -53,39 +53,23 @@ class _MainWrapperState extends State<MainWrapper> {
           });
          },
          destinations: <Widget>[
-          NavigationDestination(
-            icon:SvgPicture.asset(
-              IconPath.home,
-              colorFilter: ColorFilter.mode(
-                Theme.of(context).colorScheme.onPrimaryContainer,
-                  BlendMode.srcIn
-                ),
-            ) ,
-            selectedIcon: SvgPicture.asset(
-              IconPath.home,
-              colorFilter: ColorFilter.mode(
-                  Theme.of(context).colorScheme.primary, BlendMode.srcIn),
-            ),
-            label: "داشبورد"),
-
-
-
             NavigationDestination(
             icon:SvgPicture.asset(
-              IconPath.note,
+              IconPath.admin,
               colorFilter: ColorFilter.mode(
                 Theme.of(context).colorScheme.onPrimaryContainer,
                   BlendMode.srcIn
                 ),
             ) ,
             selectedIcon: SvgPicture.asset(
-              IconPath.note,
+              IconPath.admin,
               colorFilter: ColorFilter.mode(
                   Theme.of(context).colorScheme.primary, BlendMode.srcIn),
             ),
-            label:  'سفارشات'),
-
-
+            label: 'مدیریت')
+       ,
+         
+           
 
             NavigationDestination(
             icon:SvgPicture.asset(
@@ -104,20 +88,42 @@ class _MainWrapperState extends State<MainWrapper> {
 
 
 
-            NavigationDestination(
+           NavigationDestination(
             icon:SvgPicture.asset(
-              IconPath.admin,
+              IconPath.note,
               colorFilter: ColorFilter.mode(
                 Theme.of(context).colorScheme.onPrimaryContainer,
                   BlendMode.srcIn
                 ),
             ) ,
             selectedIcon: SvgPicture.asset(
-              IconPath.admin,
+              IconPath.note,
               colorFilter: ColorFilter.mode(
                   Theme.of(context).colorScheme.primary, BlendMode.srcIn),
             ),
-            label: 'مدیریت')
+            label:  'سفارشات'),
+
+
+       
+        NavigationDestination(
+            icon:SvgPicture.asset(
+              IconPath.home,
+              colorFilter: ColorFilter.mode(
+                Theme.of(context).colorScheme.onPrimaryContainer,
+                  BlendMode.srcIn
+                ),
+            ) ,
+            selectedIcon: SvgPicture.asset(
+              IconPath.home,
+              colorFilter: ColorFilter.mode(
+                  Theme.of(context).colorScheme.primary, BlendMode.srcIn),
+            ),
+            label: "داشبورد"),
+
+
+
+       
+       
          ],
       ),
       body: screens[index],
