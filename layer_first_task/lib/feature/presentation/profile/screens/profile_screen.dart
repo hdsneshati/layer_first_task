@@ -33,8 +33,8 @@ class ProfileScreen extends StatelessWidget {
          
           const HeaderWidget(),
         
-          const SmsButton(),
-         
+        //  const SmsButton(),
+         50.0.verticalSpace,
           Container(
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.secondaryContainer,
@@ -54,7 +54,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   const Divider(
                     height: 1,
-                    color: Colors.grey,
+                    color: Color.fromARGB(255, 197, 196, 196),
                     indent: 2,
                     endIndent: 2,
                   ),
@@ -62,12 +62,12 @@ class ProfileScreen extends StatelessWidget {
                     onTap: () {},
                     text: 'مدیریت گروه مشتریان',
                     icon: IconPath.newtag,
-                    w: 36,
-                    h: 36,
+                    w: 30,
+                    h: 30,
                   ),
                   const Divider(
                     height: 1,
-                    color: Colors.grey,
+                    color:Color.fromARGB(255, 197, 196, 196),
                     indent: 2,
                     endIndent: 2,
                   ),
@@ -75,15 +75,15 @@ class ProfileScreen extends StatelessWidget {
                     onTap: () {},
                     text: 'کاربران سیستم',
                     icon: IconPath.profile2user,
-                    w: 36,
-                    h: 36,
+                    w: 30,
+                    h: 30,
                   ),
                 ],
               ),
             ),
           ),
          
-          40.0.verticalSpace,
+          30.0.verticalSpace,
          
           Container(
             decoration: BoxDecoration(
@@ -104,7 +104,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   const Divider(
                     height: 1,
-                    color: Colors.grey,
+                    color: Color.fromARGB(255, 197, 196, 196),
                     indent: 2,
                     endIndent: 2,
                   ),

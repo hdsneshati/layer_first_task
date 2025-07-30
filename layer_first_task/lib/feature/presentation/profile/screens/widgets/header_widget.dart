@@ -13,7 +13,7 @@ class HeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 1),
+      padding: const EdgeInsets.symmetric(horizontal: 15),
      child: Container(
            width: 375, 
            height: 65,        

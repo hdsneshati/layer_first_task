@@ -13,13 +13,13 @@ class CallInformationWidget extends StatelessWidget {
     return Row(
       children: [
         16.0.horizontalSpace,
-        InkWell(
+       /* InkWell(
           child: Container(
             width: 148,
             height: 40,
             decoration: BoxDecoration(
               border: Border.all(
-                color: Theme.of(context).colorScheme.secondary, // 🎨 رنگ خط دور
+                color: Theme.of(context).colorScheme.secondaryFixed, // 🎨 رنگ خط دور
                 width: 1, // ضخامت خط
               ),
               borderRadius: BorderRadius.circular(4),
@@ -41,13 +41,13 @@ class CallInformationWidget extends StatelessWidget {
               ],
             ),
           ),
-        ),
+        ),*/
         const Spacer(),
         InkWell(
           onTap: () {},
           child: CircleAvatar(
-            radius: 24,
-            backgroundColor: Theme.of(context).colorScheme.secondary,
+            radius: 30,
+            backgroundColor: const Color.fromARGB(255, 101, 186, 255),
             child: SvgPicture.asset(
               IconPath.call,
               colorFilter: ColorFilter.mode(

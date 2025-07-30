@@ -29,10 +29,10 @@ class PrimaryProfileButton extends StatelessWidget {
      
      child: Container(
        width: 380, 
-       height: 53,        
+       height: 60,        
        decoration: BoxDecoration(
          borderRadius: BorderRadius.circular(1),      
-         color:Theme.of(context).colorScheme.secondaryContainer,                                     
+         color:Color.fromARGB(217, 248, 253, 255),                                     
                 ),    
     child:
       Row(        
@@ -52,7 +52,7 @@ class PrimaryProfileButton extends StatelessWidget {
            fontFamily: 'dana',
            fontSize: 12.0,
            fontWeight: FontWeight.bold,
-            color: Theme.of(context).colorScheme.onSurface,
+            color: const Color.fromARGB(255, 167, 166, 166),
             ),
                       ),
 
