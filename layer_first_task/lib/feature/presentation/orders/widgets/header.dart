@@ -13,7 +13,7 @@ class HeaderOrders extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 47, right: 47),
+      padding: const EdgeInsets.only(left: 27, right: 27),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -22,7 +22,7 @@ class HeaderOrders extends StatelessWidget {
             width: 24,
             height: 24,
           ),
-          PrimaryOrderButton(onTap: () {}, text: StringConsts.newOrder),
+         // PrimaryOrderButton(onTap: () {}, text: StringConsts.newOrder),
           const Spacer(),
           Text(
             StringConsts.orderTitle,

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:layer_first_task/config/asset/icons_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
 
 class SearchHeader extends StatefulWidget {
@@ -25,11 +23,11 @@ class _SearchHeaderState extends State<SearchHeader> {
            Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              buttonheader(context,'جاری',0),
+              buttonheader(context,'تحویلی',0),
               5.0.horizontalSpace,
               buttonheader(context,'اماده',1),
               5.0.horizontalSpace,
-              buttonheader(context,'تحویلی',2),
+              buttonheader(context,'جاری',2),
             ],
           ),
           Row(
@@ -46,16 +44,16 @@ class _SearchHeaderState extends State<SearchHeader> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'انتخاب دسته بندی ',
+                        'انتخاب گروه مشتری  ',
                         style: TextStyle(
                           color: Theme.of(context).colorScheme.onSurface,
                         ),
                       ),
-                      SvgPicture.asset(
-                        width: 20,
-                        height: 20,
-                        IconPath.tag,
-                      ),
+                   //   SvgPicture.asset(
+                    //    width: 20,
+                    //    height: 20,
+                     //   IconPath.tag,
+                    //  ),
                     ],
                   ),
                 ),
@@ -81,13 +79,13 @@ class _SearchHeaderState extends State<SearchHeader> {
         decoration: BoxDecoration(
           border: Border.all(
             color: selectedIndex == index
-                ? Theme.of(context).colorScheme.primary
+                ? Theme.of(context).colorScheme.secondary
                 :const Color(0xffE8EBF1),
                 
             width: 1,
           ),
           color: selectedIndex == index
-                ? Theme.of(context).colorScheme.primaryContainer
+                ? Theme.of(context).colorScheme.secondaryContainer
                 :Theme.of(context).colorScheme.secondaryContainer,
               
           borderRadius: BorderRadius.circular(10),
@@ -97,7 +95,12 @@ class _SearchHeaderState extends State<SearchHeader> {
           child: Text(
             label,
             style: TextStyle(
-              color: Theme.of(context).colorScheme.onSurface,
+               fontFamily: "dana",
+        fontSize: 11,
+        fontWeight: FontWeight.bold,
+              color: selectedIndex == index
+                ? Theme.of(context).colorScheme.secondary
+                : Theme.of(context).colorScheme.surfaceBright,
             ),
           ),
         ),

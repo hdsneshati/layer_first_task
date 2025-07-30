@@ -35,23 +35,22 @@ class _CardOrderScreenState extends State<CardOrderScreen> {
  
  
  void _showCustomBottomSheet() {
+  
     showModalBottomSheet(
       context: context,
+       
+         
+         
       isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      builder: (context) {
-        return DraggableScrollableSheet(
-          initialChildSize: 0.8, // 80% از ارتفاع صفحه
-          minChildSize: 0.1,
-          maxChildSize: 0.3,
-          expand: false,
-          builder: (context, scrollController) {
-            return const BottunScrollerScreen();
-          },
-        );
-      },
+       shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+   ),
+         builder: (context) => const BottunScrollerScreen(),
+
+       
+     
     );
-  }
+ }
  
  
  
@@ -142,7 +141,7 @@ class _CardOrderScreenState extends State<CardOrderScreen> {
                                 onPressed: _showCustomBottomSheet,
                                 child: const Text('سفارش',style:TextStyle(fontSize: 7,),),
                               ),
-                              Text(
+                          const   Text(
                                 'محصول دیگر',
                                 style: TextStyle(
                                   fontFamily: "dana",
@@ -151,7 +150,7 @@ class _CardOrderScreenState extends State<CardOrderScreen> {
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
-                              Text(
+                          const    Text(
                                 '4',
                                 style: TextStyle(
                                   fontFamily: "dana",

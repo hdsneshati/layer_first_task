@@ -19,7 +19,7 @@ class BottunScrollerScreen extends StatelessWidget {
           const HeaderNameOrder(),
           _buildInformation(context),
 
-      _buildcode(context),
+          _buildcode(context),
           Container(
             width: 384,
             decoration: BoxDecoration(
@@ -38,11 +38,12 @@ class BottunScrollerScreen extends StatelessWidget {
           _buildAmountSummary(context),
           const SizedBox(height: 8),
           // توضیحات
-           Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text('تحویل حضوری در مرکز توزیع پوشاک - ۰۱۱',style:  Theme.of(context).textTheme.bodySmall),
-              Text('توضیحات   :',style : Theme.of(context).textTheme.bodySmall),
+              Text('تحویل حضوری در مرکز توزیع پوشاک ',
+                  style: Theme.of(context).textTheme.bodySmall),
+              Text(':توضیحات ', style: Theme.of(context).textTheme.bodySmall),
             ],
           ),
           const Spacer(),
@@ -72,7 +73,6 @@ class BottunScrollerScreen extends StatelessWidget {
               ),
             ),
           ),
-          
         ],
       ),
     );
@@ -91,10 +91,10 @@ class BottunScrollerScreen extends StatelessWidget {
           ],
         ),
         const Divider(
-        color: Color.fromARGB(255, 155, 153, 153), // رنگ دلخواه
-        thickness: 1, // ضخامت خط
-        height: 16, // فاصله عمودی
-      )
+          color: Color.fromARGB(255, 155, 153, 153), // رنگ دلخواه
+          thickness: 1, // ضخامت خط
+          height: 16, // فاصله عمودی
+        )
       ],
     );
   }
@@ -108,6 +108,11 @@ class BottunScrollerScreen extends StatelessWidget {
     ];
     List<Widget> rows = [];
     for (var item in items) {
+       rows.add(const Divider(
+        color: Color.fromARGB(255, 205, 202, 202), // رنگ دلخواه
+        thickness: 1, // ضخامت خط
+        height: 16, // فاصله عمودی
+      ));
       rows.add(
         Row(
           children: [
@@ -118,11 +123,7 @@ class BottunScrollerScreen extends StatelessWidget {
           ],
         ),
       );
-      rows.add(const Divider(
-        color: Color.fromARGB(255, 205, 202, 202), // رنگ دلخواه
-        thickness: 1, // ضخامت خط
-        height: 16, // فاصله عمودی
-      ));
+     
     }
     return rows;
   }
@@ -130,7 +131,6 @@ class BottunScrollerScreen extends StatelessWidget {
   Widget _buildAmountSummary(BuildContext context) {
     return Container(
       width: 374,
-     
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.secondaryContainer,
         borderRadius: BorderRadius.circular(10),
@@ -153,9 +153,9 @@ class BottunScrollerScreen extends StatelessWidget {
             ],
           ),
           Divider(
-             color: Colors.grey, // رنگ دلخواه
-        thickness: 1, // ضخامت خط
-        height: 16, // فاصله عمودی
+            color: Colors.grey, // رنگ دلخواه
+            thickness: 1, // ضخامت خط
+            height: 16, // فاصله عمودی
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -194,7 +194,7 @@ Widget _buildInformation(BuildContext context) {
           ),
         ),
       ]),
-    5.0.verticalSpace,
+      5.0.verticalSpace,
       Row(mainAxisAlignment: MainAxisAlignment.end, children: [
         const Text(
           'دسته بندی : دبستان حیدری ',
@@ -215,7 +215,7 @@ Widget _buildInformation(BuildContext context) {
           ),
         ),
       ]),
-     5.0.verticalSpace,
+      5.0.verticalSpace,
       Row(mainAxisAlignment: MainAxisAlignment.end, children: [
         const Text(
           '    تلفن : ۰۹۳۹۱۵۵۶۸۶۲',
@@ -240,37 +240,40 @@ Widget _buildInformation(BuildContext context) {
   );
 }
 
-Widget _buildcode(BuildContext context){
-  return   Padding(
-              padding: const EdgeInsets.symmetric(vertical: 25.0),
-              child: Container(
-              width: 384,
-              height: 28,
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.secondaryContainer,
-                borderRadius: BorderRadius.circular(10),
+Widget _buildcode(BuildContext context) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 25.0),
+    child: Container(
+        width: 384,
+        height: 28,
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.secondaryContainer,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '۴۳۰۴۰ ',
+              style: TextStyle(
+                fontFamily: "dana",
+                fontSize: 13,
+                color: Color(0xff000000),
+                fontWeight: FontWeight.w400,
               ),
-              child:const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                   Text('۴۳۰۴۰ ',
-               style: TextStyle(
-                  fontFamily: "dana",
-                  fontSize: 13,
-                  color: Color(0xff000000),
-                  fontWeight: FontWeight.w400,
-                ),),
-              Text('کد تحویل',
-               style: TextStyle(
-                  fontFamily: "dana",
-                  fontSize: 13,
-                  color: Color(0xff000000),
-                  fontWeight: FontWeight.w400,
-                ),
-                )
-                ],
-              )),
-            );
+            ),
+            Text(
+              'کد تحویل',
+              style: TextStyle(
+                fontFamily: "dana",
+                fontSize: 13,
+                color: Color(0xff000000),
+                fontWeight: FontWeight.w400,
+              ),
+            )
+          ],
+        )),
+  );
 }
 
 class HeaderNameOrder extends StatelessWidget {
@@ -286,16 +289,23 @@ class HeaderNameOrder extends StatelessWidget {
         children: [
           Row(
             children: [
-              SvgPicture.asset(
-                IconPath.edit,
-                height: 24,
-                width: 24,
-              ),
-              const SizedBox(width: 8),
+             
+              
               SvgPicture.asset(
                 IconPath.trash,
                 height: 24,
                 width: 24,
+              ),
+              const SizedBox(width: 8),
+               SvgPicture.asset(
+                IconPath.edit,
+                height: 24,
+                width: 24,
+                colorFilter: ColorFilter.mode(
+                         
+                               Theme.of(context).colorScheme.secondary,
+                          BlendMode.srcIn,
+                        ),
               ),
             ],
           ),
