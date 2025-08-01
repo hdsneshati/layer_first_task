@@ -11,7 +11,7 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-     padding: EdgeInsets.symmetric(horizontal: 16.0),
+     padding:const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           children: [
             70.0.verticalSpace,
@@ -42,7 +42,7 @@ class SubscriptionManagement extends StatelessWidget {
   static const dayThreshold = 7;
   @override
   Widget build(BuildContext context) {
-    return Column();
+    return const Column();
     
     }
 }

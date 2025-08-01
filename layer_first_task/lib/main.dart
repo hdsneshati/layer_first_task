@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:layer_first_task/config/theme/color_pallet.dart';
-import 'package:layer_first_task/feature/presentation/authentication/screens/login_screen.dart';
-import 'package:layer_first_task/feature/presentation/authentication/screens/otp_screen.dart';
 import 'package:layer_first_task/feature/presentation/intro/screens/splash_screen.dart';
 
 void main() {

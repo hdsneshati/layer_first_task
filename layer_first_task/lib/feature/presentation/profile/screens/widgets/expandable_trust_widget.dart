@@ -42,7 +42,7 @@ class _ExpandableTrustWidgetState extends State<ExpandableTrustWidget> {
                   color: Theme.of(context).colorScheme.surfaceBright,
                 ),
               ),
-              Spacer(),
+            const  Spacer(),
               Row(
                 children: [
                   const Column(

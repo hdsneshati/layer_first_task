@@ -1,7 +1,6 @@
 import 'package:layer_first_task/config/asset/strings.dart';
 import 'package:layer_first_task/core/widgets/main_wrapper.dart';
 import 'package:layer_first_task/feature/presentation/authentication/widgets/primary_bottun.dart';
-import 'package:layer_first_task/feature/presentation/authentication/widgets/verification_massage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:layer_first_task/config/asset/icons_path.dart';
@@ -24,7 +23,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-          padding: EdgeInsets.only(top: 100),
+          padding:const EdgeInsets.only(top: 100),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -133,7 +132,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
               onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MainWrapper()),
+                MaterialPageRoute(builder: (context) =>const  MainWrapper()),
               );
             },
               text: StringConsts.loginButtonVerify,

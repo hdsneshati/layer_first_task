@@ -58,8 +58,8 @@ class _CardOrderScreenState extends State<CardOrderScreen> {
   Widget build(BuildContext context) {
     return InkWell(
       child: Container(
-         padding: EdgeInsets.symmetric(horizontal: 9, vertical: 10),
-        margin: EdgeInsets.only(bottom: 14, left: 24, right: 20),
+         padding:const EdgeInsets.symmetric(horizontal: 9, vertical: 10),
+        margin:const EdgeInsets.only(bottom: 14, left: 24, right: 20),
         width: double.maxFinite,
        
         decoration: BoxDecoration(
@@ -76,7 +76,7 @@ class _CardOrderScreenState extends State<CardOrderScreen> {
            
             Container(
                 width: double.maxFinite,
-              margin: EdgeInsets.only(right: 4),
+              margin:const EdgeInsets.only(right: 4),
              
               child: Row(
                 children: [
