@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:layer_first_task/config/asset/icons_path.dart';
 import 'package:layer_first_task/config/asset/strings.dart';
 import 'package:layer_first_task/config/asset/svg_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
-import 'package:layer_first_task/feature/presentation/login/widgets/primary_bottun.dart';
-import 'package:layer_first_task/feature/presentation/login/widgets/RichTextWidget.dart';
-import 'package:layer_first_task/feature/presentation/login/widgets/TextFieldWidget.dart';
+import 'package:layer_first_task/feature/presentation/authentication/widgets/primary_bottun.dart';
+import 'package:layer_first_task/feature/presentation/authentication/widgets/RichTextWidget.dart';
+import 'package:layer_first_task/feature/presentation/authentication/widgets/TextFieldWidget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -15,6 +16,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+ TextEditingController phoneNumberController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,23 +31,19 @@ class _LoginScreenState extends State<LoginScreen> {
             ),   
             17.0.verticalSpace,        
             Text(StringConsts.loginHeader
-            ,style: TextStyle(
-              fontFamily: 'dana',
-              fontSize: 24.0,
-              fontWeight: FontWeight.bold,
-               color: Theme.of(context).colorScheme.onSurface,
-            )
-            ,),
+            ,                    style: Theme.of(context).textTheme.titleLarge,
+),
             Text(StringConsts.loginSubTexts,
-            style: TextStyle(
-              fontFamily: 'dana',
-              fontSize: 14.0,
-              fontWeight: FontWeight.w400,
-              color: Theme.of(context).colorScheme.onSurface,
-            )),
+                              style: Theme.of(context).textTheme.bodyMedium,
+),
             92.0.verticalSpace,
            
-          const   TextFieldWidget(),
+          PrimaryTextBox(
+                    isNumbricKeyboard: true,
+                    controller: phoneNumberController,
+                    iconPath: IconPath.call,
+                    title: " شماره تلفن خود را وارد کنید",
+                    hint: "*********09"),
            const    Spacer(),
              PrimaryButton( onTap: () {    
                   

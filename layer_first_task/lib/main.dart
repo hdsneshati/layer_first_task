@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:layer_first_task/config/theme/color_pallet.dart';
-import 'package:layer_first_task/core/widgets/main_wrapper.dart';
-import 'package:layer_first_task/feature/presentation/login/screens/VerifyCodeScreen.dart';
-import 'package:layer_first_task/feature/presentation/login/screens/login.screen.dart';
-import 'package:layer_first_task/feature/presentation/orders/screens/orser_screen.dart';
+import 'package:layer_first_task/feature/presentation/authentication/screens/login_screen.dart';
+import 'package:layer_first_task/feature/presentation/authentication/screens/otp_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true, 
       ),
       debugShowCheckedModeBanner: false,
-      home: const MainWrapper(),
+      home: const VerifyCodeScreen(),
     );
   }
 }

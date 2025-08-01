@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:layer_first_task/config/asset/icons_path.dart';
 import 'package:layer_first_task/config/asset/svg_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
-import 'package:layer_first_task/feature/presentation/login/screens/login.screen.dart';
+import 'package:layer_first_task/feature/presentation/authentication/screens/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
