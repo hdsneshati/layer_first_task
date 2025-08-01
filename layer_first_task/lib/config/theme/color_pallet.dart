@@ -10,7 +10,7 @@ class ColorPallet {
     onPrimary: Color(0xffffffff),
     secondary: Color(0xff367cff),
     secondaryFixed: Color(0xff367cff),
-    secondaryContainer: Color.fromARGB(217, 247, 254, 255),
+    secondaryContainer:  Color(0xffF8F9FE),
     surface: Color(0xffffffff),
     inverseSurface: Color(0xfff8f9fe),
     error: Color(0xffcf2b38),
