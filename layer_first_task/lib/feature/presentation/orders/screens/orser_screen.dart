@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
 import 'package:layer_first_task/feature/presentation/orders/screens/bottunscroler.dart';
+import 'package:layer_first_task/feature/presentation/orders/widgets/card.dart';
 import 'package:layer_first_task/feature/presentation/orders/widgets/empty_state.widjet.dart';
 import 'package:layer_first_task/feature/presentation/orders/widgets/header.dart';
 import 'package:layer_first_task/feature/presentation/orders/widgets/search_header.dart';
@@ -46,17 +47,19 @@ class _OrdersScreenState extends State<OrdersScreen> {
               ),
               150.0.verticalSpace,
               //  const FilterData(),
-             // CardOrderScreen(
-             //   customerName: 'هاشم بیگ زاده',
-             //   status: 'سفارش هنوز اماده نشده',
-              //  payment: '49000 ',
-              //  items: [
-              //    OrderItem(title: 'روپوش', desc: '۲۳ مدیوم', value: '۳'),
-              //    OrderItem(title: 'شلوار', desc: '۲۳ مدیوم', value: '۲۰۰۰۰۰۰'),
-               // ],
-             // ),
+              CardOrderScreen(
+                customerName: 'هاشم بیگ زاده',
+                status: 'سفارش هنوز اماده نشده',
+              payment: '49000 ',
+                items: [
+                  OrderItem(title: 'روپوش', desc: '۲۳ مدیوم', value: '۳'),
+                  OrderItem(title: 'شلوار', desc: '۲۳ مدیوم', value: '۲۰۰۰۰۰۰'),
+                ],
+              ),
              
               //? EMPTY DATA____________________________________________________
+                 
+                 
                    EmptyState(
                     title: 'سفارشی یافت نشد',
                     isError: false,

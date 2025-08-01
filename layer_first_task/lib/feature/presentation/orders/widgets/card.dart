@@ -56,120 +56,128 @@ class _CardOrderScreenState extends State<CardOrderScreen> {
  
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 31.0, vertical: 10.0),
+    return InkWell(
       child: Container(
-        width: 420,
-        
+         padding: EdgeInsets.symmetric(horizontal: 9, vertical: 10),
+        margin: EdgeInsets.only(bottom: 14, left: 24, right: 20),
+        width: double.maxFinite,
+       
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.secondaryContainer,
-          borderRadius: BorderRadius.circular(10),
+                   border: Border.all(color: Theme.of(context).colorScheme.secondary),
+
+          borderRadius: BorderRadius.circular(4),
         ),
         child: Column(
+           mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+        
           children: [
-            5.0.verticalSpace,
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // بخش آیتم‌ها
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 5.0, right: 5.0, top: 20.0),
-                  child: Container(
-                    width: 185,
-                    
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.secondaryContainer,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: Column(
-                        children: [
-                          ...widget.items.map((item) => Column(
-                                children: [
-                                  Row(
-                                    children: [
-                                      Text(
-                                        item.value,
-                                        style: TextStyle(
-                                          fontFamily: "dana",
-                                          fontSize: 7,
-                                          color: ColorPallet
-                                              .lightColorScheme.onSurface,
-                                          fontWeight: FontWeight.w400,
+           
+            Container(
+                width: double.maxFinite,
+              margin: EdgeInsets.only(right: 4),
+             
+              child: Row(
+                children: [
+                  // بخش آیتم‌ها
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(left: 5.0, right: 5.0, top: 20.0),
+                    child: Container(
+                      width: 185,
+                      
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.secondaryContainer,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: Column(
+                          children: [
+                            ...widget.items.map((item) => Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Text(
+                                          item.value,
+                                          style: TextStyle(
+                                            fontFamily: "dana",
+                                            fontSize: 7,
+                                            color: ColorPallet
+                                                .lightColorScheme.onSurface,
+                                            fontWeight: FontWeight.w400,
+                                          ),
                                         ),
-                                      ),
-                                      const Spacer(),
-                                      Text(
-                                        item.desc,
-                                        style: const TextStyle(
-                                          fontFamily: "dana",
-                                          fontSize: 7,
-                                          color: Color(0xff000000),
-                                          fontWeight: FontWeight.w400,
+                                        const Spacer(),
+                                        Text(
+                                          item.desc,
+                                          style: const TextStyle(
+                                            fontFamily: "dana",
+                                            fontSize: 7,
+                                            color: Color(0xff000000),
+                                            fontWeight: FontWeight.w400,
+                                          ),
                                         ),
-                                      ),
-                                      20.0.horizontalSpace,
-                                      Text(
-                                        item.title,
-                                        style: TextStyle(
-                                          fontFamily: "dana",
-                                          fontSize: 7,
-                                          color: ColorPallet
-                                              .lightColorScheme.onSurface,
-                                          fontWeight: FontWeight.w400,
+                                        20.0.horizontalSpace,
+                                        Text(
+                                          item.title,
+                                          style: TextStyle(
+                                            fontFamily: "dana",
+                                            fontSize: 7,
+                                            color: ColorPallet
+                                                .lightColorScheme.onSurface,
+                                            fontWeight: FontWeight.w400,
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                  8.0.verticalSpace,
-                                  const Divider(
-                                    color: Color(0xffADADAD),
-                                    thickness: 1,
-                                    height: 5,
-                                    indent: 0,
-                                    endIndent: 0,
-                                  ),
-                                  8.0.verticalSpace
-                                ],
-                              )),
-                           Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              ElevatedButton(
-                                onPressed: _showCustomBottomSheet,
-                                child: const Text('سفارش',style:TextStyle(fontSize: 7,),),
-                              ),
-                          const   Text(
-                                'محصول دیگر',
-                                style: TextStyle(
-                                  fontFamily: "dana",
-                                  fontSize: 7,
-                                  color: Color(0xff000000),
-                                  fontWeight: FontWeight.w400,
+                                      ],
+                                    ),
+                                    8.0.verticalSpace,
+                                    const Divider(
+                                      color: Color(0xffADADAD),
+                                      thickness: 1,
+                                      height: 5,
+                                      indent: 0,
+                                      endIndent: 0,
+                                    ),
+                                    8.0.verticalSpace
+                                  ],
+                                )),
+                             Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                ElevatedButton(
+                                  onPressed: _showCustomBottomSheet,
+                                  child: const Text('سفارش',style:TextStyle(fontSize: 7,),),
                                 ),
-                              ),
-                          const    Text(
-                                '4',
-                                style: TextStyle(
-                                  fontFamily: "dana",
-                                  fontSize: 7,
-                                  color: Color(0xff000000),
-                                  fontWeight: FontWeight.w400,
+                            const   Text(
+                                  'محصول دیگر',
+                                  style: TextStyle(
+                                    fontFamily: "dana",
+                                    fontSize: 7,
+                                    color: Color(0xff000000),
+                                    fontWeight: FontWeight.w400,
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
+                            const    Text(
+                                  '4',
+                                  style: TextStyle(
+                                    fontFamily: "dana",
+                                    fontSize: 7,
+                                    color: Color(0xff000000),
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(width: 5),
-                // بخش اطلاعات مشتری
-                Flexible(
-                  child: Column(
+                  const SizedBox(width: 5),
+                  // بخش اطلاعات مشتری
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
@@ -227,8 +235,8 @@ class _CardOrderScreenState extends State<CardOrderScreen> {
                       ),
                     ],
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             const Divider(
               color: Color(0xffC5C6CC),
