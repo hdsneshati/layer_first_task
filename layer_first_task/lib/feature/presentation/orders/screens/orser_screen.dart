@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
 import 'package:layer_first_task/feature/presentation/orders/screens/bottunscroler.dart';
+import 'package:layer_first_task/feature/presentation/orders/widgets/empty_state.widjet.dart';
 import 'package:layer_first_task/feature/presentation/orders/widgets/header.dart';
 import 'package:layer_first_task/feature/presentation/orders/widgets/search_header.dart';
 
@@ -54,13 +55,18 @@ class _OrdersScreenState extends State<OrdersScreen> {
               //    OrderItem(title: 'شلوار', desc: '۲۳ مدیوم', value: '۲۰۰۰۰۰۰'),
                // ],
              // ),
-           Text(
-            "سفارش یافت نشد",
-            style: TextStyle( fontFamily: 'dana',
-                  fontSize: 12.0,
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).colorScheme.surfaceBright,),
-          ),
+             
+              //? EMPTY DATA____________________________________________________
+                   EmptyState(
+                    title: 'سفارشی یافت نشد',
+                    isError: false,
+                    action: () {
+                      // context.pushNamed('/addOrders');
+                      //context.pushAddOrdersScreen();
+                    },
+                  ),
+                
+          
            
               const SizedBox(height: 20),
             ],
