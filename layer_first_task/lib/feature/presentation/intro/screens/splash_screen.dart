@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
      body: Column(
       children: [
-        332.0.verticalSpace,
+        
         Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

@@ -1,4 +1,5 @@
 import 'package:layer_first_task/config/asset/strings.dart';
+import 'package:layer_first_task/core/widgets/main_wrapper.dart';
 import 'package:layer_first_task/feature/presentation/authentication/widgets/primary_bottun.dart';
 import 'package:layer_first_task/feature/presentation/authentication/widgets/verification_massage.dart';
 import 'package:flutter/material.dart';
@@ -129,7 +130,12 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
             ),
             const Spacer(),
             PrimaryButton(
-              onTap: () {},
+              onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MainWrapper()),
+              );
+            },
               text: StringConsts.loginButtonVerify,
             ),
             30.0.verticalSpace,

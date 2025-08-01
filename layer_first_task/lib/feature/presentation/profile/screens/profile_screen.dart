@@ -35,7 +35,7 @@ class ProfileScreen extends StatelessWidget {
             const ExpandableTrustWidget(),
           
           //  const SmsButton(),
-           50.0.verticalSpace,
+           30.0.verticalSpace,
             Container(
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.secondaryContainer,
@@ -84,7 +84,7 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
            
-            30.0.verticalSpace,
+            20.0.verticalSpace,
            
             Container(
               decoration: BoxDecoration(
@@ -121,11 +121,11 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
            
-            const Spacer(),
+            
            
            // const CallInformationWidget(),
            
-            20.0.verticalSpace,
+          
           ],
         ),
       ),
