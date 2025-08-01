@@ -17,8 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    // ⏳ بعد از 5 ثانیه، انتقال به صفحه جدید
-    Future.delayed(const Duration(seconds: 115), () {
+    Future.delayed(const Duration(seconds: 15), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const LoginScreen()),
@@ -32,21 +31,43 @@ class _SplashScreenState extends State<SplashScreen> {
       children: [
         332.0.verticalSpace,
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-             SvgPicture.asset(
-              IconPath.olgoo,
-              width: 238,
-              height: 77,
-            ), 
-            SvgPicture.asset(
-              SvgPath.logo,
-              width: 66,
-              height: 70,
-            ),
-        
-          ],
-        ),
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                   // child: DelayedWidget(
+                      //  animationDuration: Durations.long2,
+                      //  animation: DelayedAnimations.SLIDE_FROM_RIGHT,
+                        child: SvgPicture.asset(
+                          SvgPath.logo,
+                          width: 100,
+                          height: 100,
+                        )
+                        ),
+               //   ),
+                 // DelayedWidget(
+                  //  delayDuration: const Duration(milliseconds: 700),
+                   // animationDuration: Durations.long2,
+                  //  animation: DelayedAnimations.SLIDE_FROM_RIGHT,
+                  //  child: Shimmer.fromColors(
+                  //    period: Durations.extralong4,
+                   //   direction: ShimmerDirection.rtl,
+                   //   baseColor: Theme.of(context).colorScheme.onSurface,
+                   //   highlightColor: Theme.of(context).colorScheme.surfaceTint,
+                     // child:
+                       const Text(
+                        "الـگو",
+                        style: TextStyle(
+                          fontSize: 100,
+                          height: 7,
+                          fontFamily: "dana",
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                  //  ),
+                 // ),
+                ],
+              ),
        const Spacer(),
         Text('نسخه ۳.۰.۱',
           style: TextStyle(
