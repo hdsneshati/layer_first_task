@@ -27,7 +27,7 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            127.0.verticalSpace,
+            80.0.verticalSpace,
             SvgPicture.asset(
               IconPath.massagetext,
               width: 100,

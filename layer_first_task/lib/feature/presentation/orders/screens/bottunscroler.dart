@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:layer_first_task/config/asset/icons_path.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
@@ -9,30 +10,31 @@ class BottunScrollerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 39.0, horizontal: 26.0),
+      padding: const EdgeInsets.all(16.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          // ... بخش اطلاعات کاربر و آیکون‌ها ...
-          // ... بخش کد تحویل ...
-          // جدول کالاها
+          //badge
+          Align(
+            alignment: Alignment.center,
+            child: Container(
+              width: 55,
+              height: 4,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surfaceBright,
+                borderRadius: BorderRadius.circular(4),
+              ),
+            ),
+          ),
+          //
           const HeaderNameOrder(),
+          16.0.verticalSpace,
           _buildInformation(context),
 
           _buildcode(context),
-          Container(
-            width: 384,
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.secondaryContainer,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
-              children: [
-                _buildTableHeader(context),
-                ..._buildOrderRows(context),
-              ],
-            ),
-          ),
+          16.0.verticalSpace,
+          _buildTableHeader(context),
+          ..._buildOrderRows(context),
           const SizedBox(height: 8),
           // بخش جمع مبالغ
           _buildAmountSummary(context),
@@ -108,7 +110,7 @@ class BottunScrollerScreen extends StatelessWidget {
     ];
     List<Widget> rows = [];
     for (var item in items) {
-       rows.add(const Divider(
+      rows.add(const Divider(
         color: Color.fromARGB(255, 205, 202, 202), // رنگ دلخواه
         thickness: 1, // ضخامت خط
         height: 16, // فاصله عمودی
@@ -123,7 +125,6 @@ class BottunScrollerScreen extends StatelessWidget {
           ],
         ),
       );
-     
     }
     return rows;
   }
@@ -179,57 +180,81 @@ Widget _buildInformation(BuildContext context) {
           'تاریخ وضعیت : ۴/۵/۱۴۰۴  ',
           style: TextStyle(
             fontFamily: "dana",
-            fontSize: 10,
-            color: Color(0xff000000),
-            fontWeight: FontWeight.w400,
+            fontSize: 12,
+            fontWeight: FontWeight.w500,
           ),
         ),
+        4.0.horizontalSpace,
         SvgPicture.asset(
-          IconPath.calender,
-          height: 16,
-          width: 16,
+          IconPath.date,
+          height: 20,
+          width: 20,
           colorFilter: const ColorFilter.mode(
             Color(0xff000000),
             BlendMode.srcIn,
           ),
         ),
       ]),
-      5.0.verticalSpace,
+      4.0.verticalSpace,
       Row(mainAxisAlignment: MainAxisAlignment.end, children: [
         const Text(
-          'دسته بندی : دبستان حیدری ',
+          'گروه مشتری  : دبستان حیدری ',
           style: TextStyle(
             fontFamily: "dana",
-            fontSize: 10,
-            color: Color(0xff000000),
-            fontWeight: FontWeight.w400,
+            fontSize: 12,
+            fontWeight: FontWeight.w500,
           ),
         ),
+        4.0.horizontalSpace,
         SvgPicture.asset(
           IconPath.tag,
-          height: 16,
-          width: 16,
+          height: 20,
+          width: 20,
           colorFilter: const ColorFilter.mode(
             Color(0xff000000),
             BlendMode.srcIn,
           ),
         ),
       ]),
-      5.0.verticalSpace,
+      4.0.verticalSpace,
       Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+        InkWell(
+          child: SizedBox(
+            height: 24,
+            child: Center(
+              child: Text(
+                '۰۹۳۹۱۵۵۶۸۶۲',
+                style: TextStyle(
+                  fontFamily: "dana",
+                  fontSize: 12,
+                  color: Theme.of(context).colorScheme.secondary,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          ),
+          onTap: () async {
+            // var customerPhone;
+            //  await Clipboard.setData(
+            //         ClipboardData(text: customerPhone))
+            //     .then((value) => SnackBars.successSnackBar(
+            //         context, "شماره تلفن کپی شد", ""));
+            // copied successfully
+          },
+        ),
         const Text(
-          '    تلفن : ۰۹۳۹۱۵۵۶۸۶۲',
+          ': تلفن  ',
           style: TextStyle(
             fontFamily: "dana",
-            fontSize: 10,
-            color: Color(0xff000000),
-            fontWeight: FontWeight.w400,
+            fontSize: 12,
+            fontWeight: FontWeight.w500,
           ),
         ),
+        4.0.horizontalSpace,
         SvgPicture.asset(
           IconPath.call,
-          height: 16,
-          width: 16,
+          height: 20,
+          width: 20,
           colorFilter: const ColorFilter.mode(
             Color(0xff000000),
             BlendMode.srcIn,
@@ -241,39 +266,25 @@ Widget _buildInformation(BuildContext context) {
 }
 
 Widget _buildcode(BuildContext context) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(vertical: 25.0),
-    child: Container(
-        width: 384,
-        height: 28,
-        decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.secondaryContainer,
-          borderRadius: BorderRadius.circular(10),
+  return Container(
+      margin: EdgeInsets.only(left: 30, right: 30),
+      height: 30,
+      width: double.maxFinite,
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.secondaryContainer,
+        borderRadius: BorderRadius.circular(4),
+      ),
+      child:const Center(
+        child: Text(
+          '۴۳۰۴۰ ' 'کد تحویل',
+          style: TextStyle(
+            fontFamily: "dana",
+            fontSize: 13,
+            color: Color(0xff000000),
+            fontWeight: FontWeight.w400,
+          ),
         ),
-        child: const Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              '۴۳۰۴۰ ',
-              style: TextStyle(
-                fontFamily: "dana",
-                fontSize: 13,
-                color: Color(0xff000000),
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-            Text(
-              'کد تحویل',
-              style: TextStyle(
-                fontFamily: "dana",
-                fontSize: 13,
-                color: Color(0xff000000),
-                fontWeight: FontWeight.w400,
-              ),
-            )
-          ],
-        )),
-  );
+      ));
 }
 
 class HeaderNameOrder extends StatelessWidget {
@@ -289,23 +300,20 @@ class HeaderNameOrder extends StatelessWidget {
         children: [
           Row(
             children: [
-             
-              
               SvgPicture.asset(
                 IconPath.trash,
                 height: 24,
                 width: 24,
               ),
               const SizedBox(width: 8),
-               SvgPicture.asset(
+              SvgPicture.asset(
                 IconPath.edit,
                 height: 24,
                 width: 24,
                 colorFilter: ColorFilter.mode(
-                         
-                               Theme.of(context).colorScheme.secondary,
-                          BlendMode.srcIn,
-                        ),
+                  Theme.of(context).colorScheme.secondary,
+                  BlendMode.srcIn,
+                ),
               ),
             ],
           ),
@@ -314,9 +322,8 @@ class HeaderNameOrder extends StatelessWidget {
             'مهدی علوی فر',
             style: TextStyle(
               fontFamily: "dana",
-              fontSize: 20,
-              color: Color(0xff71727A),
-              fontWeight: FontWeight.w500,
+              fontSize: 18,
+              fontWeight: FontWeight.w400,
             ),
           ),
         ],

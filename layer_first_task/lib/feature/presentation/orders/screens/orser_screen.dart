@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:layer_first_task/config/extentions/gap_space_extension.dart';
 import 'package:layer_first_task/feature/presentation/orders/screens/bottunscroler.dart';
 import 'package:layer_first_task/feature/presentation/orders/widgets/card.dart';
-import 'package:layer_first_task/feature/presentation/orders/widgets/empty_state.widjet.dart';
 import 'package:layer_first_task/feature/presentation/orders/widgets/header.dart';
 import 'package:layer_first_task/feature/presentation/orders/widgets/search_header.dart';
 
@@ -14,7 +13,7 @@ class OrdersScreen extends StatefulWidget {
 }
 
 class _OrdersScreenState extends State<OrdersScreen> {
-  void _showCustomBottomSheet() {
+  /*void _showCustomBottomSheet() {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -23,8 +22,18 @@ class _OrdersScreenState extends State<OrdersScreen> {
       ),
       builder: (context) => const BottunScrollerScreen(),
     );
-  }
-
+  }*/
+showOrderBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true, // برای گسترش کامل صفحه
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (context) {
+        return const BottunScrollerScreen();
+      },
+    );}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,9 +54,10 @@ class _OrdersScreenState extends State<OrdersScreen> {
                 indent: 8, // فاصله از چپ
                 endIndent: 8, // فاصله از راست
               ),
-              150.0.verticalSpace,
+              50.0.verticalSpace,
               //  const FilterData(),
               CardOrderScreen(
+                onPressed:(){showOrderBottomSheet(context);},
                 customerName: 'هاشم بیگ زاده',
                 status: 'سفارش هنوز اماده نشده',
               payment: '49000 ',
@@ -58,7 +68,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
               ),
              
               //? EMPTY DATA____________________________________________________
-                 
+               /*  
                  
                    EmptyState(
                     title: 'سفارشی یافت نشد',
@@ -69,7 +79,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
                     },
                   ),
                 
-          
+          */
            
               const SizedBox(height: 20),
             ],
@@ -81,7 +91,8 @@ class _OrdersScreenState extends State<OrdersScreen> {
           backgroundColor: Theme.of(context).colorScheme.primaryFixed,
           onPressed: () {
             // context.pushNamed("/addOrders");
-            _showCustomBottomSheet;
+          //  _showCustomBottomSheet;
+          showOrderBottomSheet(context);
           },
           label:  Text(
             "سفارش جدید",
